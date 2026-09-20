@@ -1,0 +1,17 @@
+import type { Metadata } from 'next';
+import '@fontsource-variable/instrument-sans';
+import '@fontsource/ibm-plex-mono/400.css';
+import './globals.css';
+
+export const metadata: Metadata = {
+  title: 'Modum Studio',
+  description: 'Modum Studio — product truth, commercial clarity, creative and digital experiences for product companies.',
+};
+
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  return (
+    <html lang="it">
+      <body>{children}</body>
+    </html>
+  );
+}
