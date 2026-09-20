@@ -132,3 +132,64 @@ Do not treat the design as final or deploy as APPROVED without both cofounders' 
 ## Review principle
 If the website is interesting only because it moves, the direction is wrong.
 It should work when static; motion should make it feel more alive, not make it understandable.
+
+
+## Technology scouting from visual references
+
+Every visual reference supplied by Control Room must also be checked as a possible implementation technology, not only as moodboard material.
+
+### Cult UI
+Use case: localized distorted-glass / SVG-filter interactions.
+Status: approved candidate.
+Rules:
+- copy/adapt source locally;
+- keep the effect rare and localized;
+- test Safari/Firefox/Chrome;
+- preserve readable fallback;
+- do not adopt Cult UI as the site's whole design system.
+
+### Refero Styles / Refero MCP
+Use case: research and validation of design systems, spacing, typography, tokens and real product-site patterns.
+Status: approved research tool, not a runtime dependency.
+Rules:
+- use for comparative evidence;
+- do not wholesale-copy third-party systems;
+- extract principles, not identity.
+
+### Originkit
+Use case: source for one-off animated interaction primitives.
+Status: approved for selective evaluation.
+Rules:
+- define the interaction job first;
+- inspect dependencies and source;
+- copy locally only when licensing permits;
+- strip unused options;
+- verify accessibility and bundle cost;
+- do not let Originkit define the site's visual language.
+
+### Casberry AI Particle Simulator
+Use case: generative / particle prototype source.
+Status: prototype candidate only.
+Rules:
+- use for experimentation/export;
+- if selected, recreate or own the relevant Three.js/R3F behavior locally;
+- profile GPU/CPU/mobile;
+- reduce particle count aggressively;
+- never run a heavy particle system alongside the full hero WebGL scene unless the entropy/performance budget allows it.
+
+### Technology selection test
+A reference becomes production technology only if:
+1. it performs a specific visual or interaction job;
+2. that job matters to the Modum character;
+3. we can understand and own the source;
+4. accessibility is preserved;
+5. mobile works or degrades cleanly;
+6. performance remains inside budget;
+7. licensing is clear;
+8. the effect is still good after the novelty wears off.
+
+### Entropy rule
+At any viewport:
+- one major high-cost visual system maximum;
+- secondary effects should be CSS/SVG/lightweight;
+- do not stack hero WebGL + particle simulation + glass shader + text shader simultaneously.
