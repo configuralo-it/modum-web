@@ -56,3 +56,125 @@
 @media(prefers-reduced-motion:reduce){
   .hero-canvas,.hero-object-fallback{animation:none!important;will-change:auto}
 }
+
+
+/* MOD-WEB-001 v0.3 — controlled future / editorial disruption */
+.hero-membrane{
+  position:absolute;
+  z-index:1;
+  right:-7vw;
+  bottom:-7%;
+  width:58%;
+  height:38%;
+  border-radius:58% 42% 0 0 / 72% 58% 0 0;
+  background:
+    radial-gradient(circle at 28% 18%,rgba(255,77,0,.14),transparent 34%),
+    linear-gradient(145deg,rgba(20,20,18,.02),rgba(20,20,18,.11));
+  border-top:1px solid rgba(20,20,18,.1);
+  transform:rotate(-3deg);
+  transform-origin:70% 100%;
+  pointer-events:none;
+  animation:membraneBreath 17s cubic-bezier(.45,.05,.25,1) infinite alternate;
+}
+.hero-orbit{
+  position:absolute;
+  z-index:3;
+  right:7%;
+  top:14%;
+  width:clamp(180px,18vw,290px);
+  aspect-ratio:1;
+  border:1px solid rgba(20,20,18,.13);
+  border-radius:50%;
+  pointer-events:none;
+  transform:rotate(-12deg);
+}
+.hero-orbit:before{
+  content:"";
+  position:absolute;
+  inset:13%;
+  border:1px dashed rgba(20,20,18,.14);
+  border-radius:50%;
+}
+.hero-orbit:after{
+  content:"";
+  position:absolute;
+  width:7px;height:7px;
+  border-radius:50%;
+  background:var(--signal);
+  left:10%;top:47%;
+  box-shadow:0 0 0 5px rgba(255,77,0,.08);
+}
+.hero-orbit span{
+  position:absolute;
+  right:-5px;top:50%;
+  font:10px 'IBM Plex Mono';
+  letter-spacing:.08em;
+  transform:translateY(-50%) rotate(12deg);
+}
+@keyframes membraneBreath{
+  0%{border-radius:58% 42% 0 0 / 72% 58% 0 0;transform:rotate(-3deg) scaleX(.99)}
+  55%{border-radius:48% 52% 0 0 / 61% 74% 0 0;transform:rotate(-2deg) scaleX(1.025)}
+  100%{border-radius:64% 36% 0 0 / 78% 52% 0 0;transform:rotate(-3.5deg) scaleX(1.01)}
+}
+
+/* Work behaves as an editorial spread rather than a card grid */
+.work{padding-top:118px;padding-bottom:150px}
+.project-grid{
+  grid-template-columns:1.28fr .72fr;
+  grid-template-rows:auto auto;
+  column-gap:18px;
+  row-gap:56px;
+  align-items:start;
+}
+.project-1{grid-row:1 / span 2}
+.project-1 .project-visual{height:720px}
+.project-2{margin-top:86px}
+.project-2 .project-visual{height:330px}
+.project-3{width:82%;justify-self:end}
+.project-3 .project-visual{height:290px}
+.project-info{border-top:1px solid rgba(20,20,18,.13);padding-top:13px}
+.project-info button{
+  transition:transform .2s ease,background-color .2s ease,color .2s ease;
+}
+.project-info button:hover{transform:rotate(45deg);background:var(--ink);color:white}
+.project-object:after{
+  content:"ASSET / PENDING";
+  position:absolute;
+  right:14px;bottom:14px;
+  padding:7px 9px;
+  background:rgba(241,240,234,.82);
+  font:9px 'IBM Plex Mono';
+  letter-spacing:.08em;
+}
+
+/* Technical edge marks: cyber tension without cyber aesthetic takeover */
+.services:before,.detail:before{
+  content:"";
+  display:block;
+  width:42px;height:6px;
+  margin-bottom:34px;
+  border-left:18px solid var(--signal);
+  border-right:1px solid rgba(20,20,18,.28);
+}
+.prototype-cta{cursor:not-allowed;appearance:none;font-family:inherit}
+@media(max-width:1000px){
+  .hero-membrane{width:72%;height:30%;right:-20vw}
+  .hero-orbit{right:-4%;top:39%}
+  .project-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto}
+  .project-1{grid-row:auto}
+  .project-1 .project-visual{height:520px}
+  .project-2{margin-top:70px}
+  .project-2 .project-visual{height:410px}
+  .project-3{display:none}
+}
+@media(max-width:640px){
+  .hero-membrane{width:105%;height:25%;right:-48%;bottom:3%}
+  .hero-orbit{width:175px;right:-22%;top:53%}
+  .project-grid{grid-template-columns:1fr;gap:34px}
+  .project-1 .project-visual{height:470px}
+  .project-2{display:block;margin-top:0}
+  .project-2 .project-visual{height:260px}
+}
+@media(prefers-reduced-motion:reduce){
+  .hero-membrane{animation:none!important}
+}
