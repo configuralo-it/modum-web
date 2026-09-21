@@ -1,28 +1,22 @@
-'use client';
-
-import { useEffect } from 'react';
-
-export function RevealController() {
-  useEffect(() => {
-    const nodes = Array.from(
-      document.querySelectorAll<HTMLElement>('[data-reveal]'),
-    );
-
+const revealScript = String.raw`
+(() => {
+  const start = () => {
+    const nodes = Array.from(document.querySelectorAll('[data-reveal]'));
     if (!nodes.length) return;
 
     const params = new URLSearchParams(window.location.search);
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     if (params.get('review') === '1') {
-      nodes.forEach((node) => {
+      for (const node of nodes) {
         node.style.transition = 'none';
         node.classList.add('is-visible');
-      });
+      }
       return;
     }
 
-    if (reduced) {
-      nodes.forEach((node) => node.classList.add('is-visible'));
+    if (reduced || !('IntersectionObserver' in window)) {
+      for (const node of nodes) node.classList.add('is-visible');
       return;
     }
 
@@ -30,17 +24,24 @@ export function RevealController() {
       (entries) => {
         for (const entry of entries) {
           if (!entry.isIntersecting) continue;
-          (entry.target as HTMLElement).classList.add('is-visible');
+          entry.target.classList.add('is-visible');
           observer.unobserve(entry.target);
         }
       },
       { threshold: 0.14 },
     );
 
-    nodes.forEach((node) => observer.observe(node));
+    for (const node of nodes) observer.observe(node);
+  };
 
-    return () => observer.disconnect();
-  }, []);
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', start, { once: true });
+  } else {
+    start();
+  }
+})();
+`;
 
-  return null;
+export function RevealController() {
+  return <script dangerouslySetInnerHTML={{ __html: revealScript }} />;
 }
