@@ -1606,13 +1606,10 @@ button:focus-visible{
   pointer-events:none;
 }
 @keyframes logicSignal{
-  0%,8%{transform:translateX(0);opacity:0}
+  0%,8%{left:0;opacity:0}
   14%{opacity:1}
   86%{opacity:1}
-  94%,100%{transform:translateX(calc(var(--logic-width, 100%) - 7px));opacity:0}
-}
-@supports (width: calc-size(auto, size)){
-  .logic{--logic-width:100%}
+  94%,100%{left:calc(100% - 7px);opacity:0}
 }
 @media(max-width:1000px){
   .logic:after{
