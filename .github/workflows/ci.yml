@@ -4,10 +4,12 @@ on:
   push:
     branches:
       - feat/mod-web-001
+    paths-ignore:
+      - 'review/**'
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -75,9 +77,14 @@ jobs:
     name: Post-deploy Review
     runs-on: ubuntu-latest
     needs: deploy
-    timeout-minutes: 10
+    timeout-minutes: 15
 
     steps:
+      - name: Checkout review target
+        uses: actions/checkout@v4
+        with:
+          ref: feat/mod-web-001
+
       - name: Wait for edge propagation
         run: sleep 8
 
@@ -91,35 +98,64 @@ jobs:
           grep -q "Modum" /tmp/modum-preview.html
           echo "HTTP smoke test passed."
 
-      - name: Lighthouse review
+      - name: Lighthouse audit
         env:
           PAGE_URL: ${{ needs.deploy.outputs.page_url }}
         run: |
-          npx --yes lighthouse@12 "$PAGE_URL"             --quiet             --chrome-flags="--headless --no-sandbox --disable-dev-shm-usage"             --only-categories=performance,accessibility,best-practices,seo             --output=json             --output-path=/tmp/lighthouse.json
+          mkdir -p review
+          npx --yes lighthouse@12 "$PAGE_URL"             --quiet             --chrome-flags="--headless --no-sandbox --disable-dev-shm-usage"             --only-categories=performance,accessibility,best-practices,seo             --output=json             --output-path=review/lighthouse.json
 
           node - <<'NODE'
           const fs = require('fs');
-          const report = JSON.parse(fs.readFileSync('/tmp/lighthouse.json', 'utf8'));
-          const categories = report.categories;
+          const report = JSON.parse(fs.readFileSync('review/lighthouse.json', 'utf8'));
+          const c = report.categories;
           const scores = {
-            performance: Math.round(categories.performance.score * 100),
-            accessibility: Math.round(categories.accessibility.score * 100),
-            bestPractices: Math.round(categories['best-practices'].score * 100),
-            seo: Math.round(categories.seo.score * 100),
+            performance: Math.round(c.performance.score * 100),
+            accessibility: Math.round(c.accessibility.score * 100),
+            bestPractices: Math.round(c['best-practices'].score * 100),
+            seo: Math.round(c.seo.score * 100),
           };
+          fs.writeFileSync('review/lighthouse-summary.json', JSON.stringify(scores, null, 2) + '\n');
           console.log('MODUM_REVIEW ' + JSON.stringify(scores));
+          NODE
 
+      - name: Install Playwright Chromium
+        run: npx --yes playwright@1.55.0 install --with-deps chromium
+
+      - name: Capture live desktop and mobile
+        env:
+          PAGE_URL: ${{ needs.deploy.outputs.page_url }}
+        run: |
+          npx --yes playwright@1.55.0 screenshot             --browser chromium             --viewport-size "1440,1000"             --full-page             "$PAGE_URL"             review/latest-desktop.png
+
+          npx --yes playwright@1.55.0 screenshot             --browser chromium             --device "iPhone 14"             --full-page             "$PAGE_URL"             review/latest-mobile.png
+
+      - name: Persist review artifacts
+        run: |
+          git config user.name "modum-review-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add review/lighthouse.json review/lighthouse-summary.json review/latest-desktop.png review/latest-mobile.png
+          if git diff --cached --quiet; then
+            echo "No review artifact changes."
+          else
+            git commit -m "chore(review): update live preview evidence [skip ci]"
+            git push origin HEAD:feat/mod-web-001
+          fi
+
+      - name: Enforce review thresholds
+        run: |
+          node - <<'NODE'
+          const fs = require('fs');
+          const scores = JSON.parse(fs.readFileSync('review/lighthouse-summary.json', 'utf8'));
           const minimums = {
             performance: 70,
             accessibility: 90,
             bestPractices: 90,
             seo: 90,
           };
-
           const failures = Object.entries(minimums)
             .filter(([key, min]) => scores[key] < min)
             .map(([key, min]) => `${key}=${scores[key]} (<${min})`);
-
           if (failures.length) {
             console.error('Review thresholds not met: ' + failures.join(', '));
             process.exit(1);
