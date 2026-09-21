@@ -1,15 +1,22 @@
 import { BrandLogo } from '@/components/BrandLogo';
-import { ProductStudy } from '@/components/ProductStudy';
-import { InteractionLayer } from '@/components/InteractionLayer';
+import { materials } from '@/lib/studies';
 import { siteConfig } from '@/lib/site';
 
 const services = [
-  ['01', '3D Rendering', 'Form, material, light and proportion before the product is physically in front of the customer.'],
+  ['01', '3D Rendering', 'Form, material, light and proportion before the product physically exists in front of the customer.'],
   ['02', 'Catalogs & Brochures', 'Collections, variants and information turned into a clear editorial system.'],
   ['03', 'Photo & Video', 'Product, context and use shown with enough direction to make the real value legible.'],
   ['04', 'Product Configurators', 'Choices become visible. Variants, finishes and combinations become easier to understand.'],
   ['05', 'Web & E-commerce', 'Digital product experiences designed around what people need to see, understand and choose.'],
   ['06', 'AI Strategy & Automation', 'Technology used where it improves consistency, speed or the quality of the process.'],
+];
+
+const pageIndex = [
+  ['01', 'Selected studies', '#work'],
+  ['02', 'What we make', '#services'],
+  ['03', 'How we see product', '#approach'],
+  ['04', 'Studio', '#studio'],
+  ['05', 'Contact', '#contact'],
 ];
 
 const mobileMenuScript = String.raw`
@@ -37,23 +44,23 @@ const mobileMenuScript = String.raw`
 
 export default function HomePage() {
   return (
-    <main className="v2 v25">
-      <InteractionLayer />
-
-      <header className="v2-header v2-shell">
-        <a href="#top" className="v2-logo-link" aria-label="Modum Studio home">
-          <BrandLogo className="v2-logo" />
+    <main className="v3">
+      <header className="v3-header shell">
+        <a href="#top" className="v3-logo-link" aria-label="Modum Studio home">
+          <BrandLogo className="v3-logo" />
         </a>
 
-        <nav className="v2-nav" aria-label="Primary navigation">
+        <nav className="v3-nav mono" aria-label="Primary navigation">
           <a href="#work">Work</a>
           <a href="#services">What we make</a>
           <a href="#studio">Studio</a>
           <a href="#contact">Contact</a>
         </nav>
 
-        <details className="v2-mobile-menu">
-          <summary>Menu <i>/</i></summary>
+        <span className="v3-header-place mono">Rimini — IT</span>
+
+        <details className="v3-mobile-menu mono">
+          <summary>Menu <i aria-hidden="true">/</i></summary>
           <div>
             <a href="#work">Work</a>
             <a href="#services">What we make</a>
@@ -64,180 +71,220 @@ export default function HomePage() {
         <script dangerouslySetInnerHTML={{ __html: mobileMenuScript }} />
       </header>
 
-      <section id="top" className="v25-hero v2-hero">
-        <div className="v25-grid-lines" aria-hidden="true" />
-        <div className="v2-hero-wordmark v25-wordmark" aria-hidden="true">
-          <BrandLogo decorative />
-        </div>
+      <section id="top" className="v3-hero shell" aria-label="Introduction">
+        <h1 className="v3-statement">
+          <span className="v3-statement-line">Make real</span>
+          <span className="v3-statement-line v3-step-1">product</span>
+          <span className="v3-statement-line v3-step-2">value</span>
+          <span className="v3-statement-line">visible<i className="v3-dot" aria-hidden="true">.</i></span>
+        </h1>
 
-        <div className="v2-shell v25-hero-shell">
-          <div className="v25-hero-intro">
-            <span className="v2-label">MODUM STUDIO / RIMINI — IT</span>
-            <p>A creative and digital studio for real products.</p>
-          </div>
+        <div className="v3-hero-foot">
+          <p className="v3-hero-copy">
+            Modum Studio reduces the distance between what a product is and what people can
+            perceive, understand and choose before they have it in front of them.
+          </p>
 
-          <div className="v2-product-plate v25-product-stage" aria-label="Modum Product Study 01">
-            <ProductStudy variant="hero" className="v2-product-art v25-product-art" />
-            <span className="v25-object-note v25-object-note-a">MODUM PRODUCT STUDY / 01</span>
-          </div>
-
-          <div className="v25-hero-statement">
-            <h1>Make real product value visible.</h1>
-            <a href="#work" className="v2-arrow-link">Selected work <span>↓</span></a>
-          </div>
-
-          <div className="v25-hero-axis" aria-hidden="true">
-            <span>OBJECT</span><i>/</i><span>IMAGE</span><i>/</i><span>DIGITAL</span>
-          </div>
-        </div>
-      </section>
-
-      <section id="work" className="v25-work v2-shell">
-        <div className="v25-section-intro" data-reveal>
-          <span className="v2-label">01 / SELECTED WORK</span>
-          <p>Three Modum Studio Studies. Different media, one question: how much of the real product can be understood before it is physically in front of you?</p>
-        </div>
-
-        <div className="v25-work-index">
-          <article className="v25-work-row v25-work-row-product" data-reveal>
-            <div className="v25-work-line">
-              <span>01</span>
-              <h2>Product / Material Study</h2>
-              <p>3D · visual direction · product truth</p>
-              <b aria-hidden="true">↘</b>
-            </div>
-            <div className="v25-work-preview v25-preview-product">
-              <ProductStudy variant="detail" className="v25-work-product-art" />
-              <div className="v25-preview-caption">
-                <span>MODUM PRODUCT STUDY</span>
-                <span>SHELL / FRAME / JOINT</span>
-              </div>
-            </div>
-          </article>
-
-          <article className="v25-work-row v25-work-row-editorial" data-reveal>
-            <div className="v25-work-line">
-              <span>02</span>
-              <h2>Editorial System Study</h2>
-              <p>Catalog · typography · hierarchy</p>
-              <b aria-hidden="true">↘</b>
-            </div>
-            <div className="v25-work-preview v25-preview-editorial" aria-hidden="true">
-              <div className="v25-editorial-sheet">
-                <small>MODUM / STUDY 02</small>
-                <strong>FORM</strong>
-                <i>/</i>
-                <span>PRODUCT<br />INFORMATION<br />AS SYSTEM</span>
-              </div>
-              <div className="v25-editorial-sheet v25-editorial-sheet-dark">
-                <small>CATALOG / 01—96</small>
-                <strong>MAT<br />TER</strong>
-                <span>OBJECTS / DETAILS / VARIANTS</span>
-              </div>
-            </div>
-          </article>
-
-          <article className="v25-work-row v25-work-row-digital" data-reveal>
-            <div className="v25-work-line">
-              <span>03</span>
-              <h2>Configurator Study</h2>
-              <p>Variants · interaction · decision</p>
-              <b aria-hidden="true">↘</b>
-            </div>
-            <div className="v25-work-preview v25-preview-digital" aria-hidden="true">
-              <div className="v25-config-object">
-                <div className="v25-config-ring" />
-                <span>01</span><span>02</span><span>03</span>
-              </div>
-              <div className="v25-config-list">
-                <small>MATERIAL</small>
-                <strong>Oak</strong>
-                <strong>Steel</strong>
-                <strong>Fabric</strong>
-              </div>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section id="services" className="v2-capabilities v25-capabilities">
-        <div className="v2-shell">
-          <div className="v2-capabilities-intro" data-reveal>
-            <span className="v2-label">02 / WHAT WE MAKE</span>
-            <h2>Different disciplines.<br />One product reality.</h2>
-            <p>We choose the medium after understanding what the product needs people to perceive.</p>
-          </div>
-
-          <div className="v2-service-list" data-reveal>
-            {services.map(([n, title, description]) => (
-              <article key={n}>
+          <nav className="v3-index mono" aria-label="Page index">
+            {pageIndex.map(([n, label, href]) => (
+              <a key={n} href={href}>
                 <span>{n}</span>
-                <h3>{title}</h3>
-                <p>{description}</p>
-              </article>
+                <em>{label}</em>
+              </a>
             ))}
-          </div>
+          </nav>
         </div>
       </section>
 
-      <section id="approach" className="v25-process">
-        <div className="v2-shell">
-          <div className="v25-process-head" data-reveal>
-            <span className="v2-label">03 / HOW WE SEE PRODUCT</span>
-            <p>Process is useful when it reveals why an object is worth choosing.</p>
+      <div className="v3-band shell" role="group" aria-label="Material studies, photographed">
+        {materials.map((m) => (
+          <figure key={m.id} className="v3-band-cell">
+            <img src={m.src} alt={m.alt} width={1200} height={800} decoding="async" />
+            <figcaption className="mono">
+              <span>{m.name}</span>
+              <span>{m.detail}</span>
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+
+      <section id="work" className="v3-section shell">
+        <header className="v3-section-head">
+          <span className="mono">01 / Selected studies</span>
+          <p>
+            Client work is deliberately not shown yet. Three internal studies stand in its
+            place — real artifacts made by the studio, shown as they are.
+          </p>
+        </header>
+
+        <article className="v3-study v3-study-material">
+          <div className="v3-study-line">
+            <h2><i aria-hidden="true">/</i> Material</h2>
+            <span className="mono">Study 01 — Photography</span>
+          </div>
+          <div className="v3-study-material-grid">
+            <figure className="v3-study-material-main">
+              <img src={materials[0].src} alt={materials[0].alt} width={1200} height={800} loading="lazy" decoding="async" />
+            </figure>
+            <div className="v3-study-material-rail">
+              <p>
+                How much of a material survives the screen? Surface, grain and finish
+                photographed close enough to be judged, not decorated.
+              </p>
+              <ul className="mono">
+                <li>Oak — plank surface</li>
+                <li>Textile — grey weave</li>
+                <li>Steel — brushed finish</li>
+              </ul>
+              <div className="v3-study-material-thumbs">
+                <img src={materials[1].src} alt={materials[1].alt} width={600} height={400} loading="lazy" decoding="async" />
+                <img src={materials[2].src} alt={materials[2].alt} width={600} height={400} loading="lazy" decoding="async" />
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article className="v3-study v3-study-editorial">
+          <div className="v3-study-line">
+            <h2><i aria-hidden="true">/</i> Editorial</h2>
+            <span className="mono">Study 02 — Typography</span>
+          </div>
+          <div className="v3-sheets" aria-label="Two editorial layout exercises">
+            <div className="v3-sheet">
+              <small className="mono">Modum / Editorial study</small>
+              <strong>Form</strong>
+              <span>Product information as a system: hierarchy first, decoration never.</span>
+            </div>
+            <div className="v3-sheet v3-sheet-dark">
+              <small className="mono">Catalog exercise / 01–96</small>
+              <strong>Matter</strong>
+              <span>Objects, details, variants — ordered so a reader can decide.</span>
+            </div>
+          </div>
+        </article>
+
+        <article className="v3-study v3-study-configurator">
+          <div className="v3-study-line">
+            <h2><i aria-hidden="true">/</i> Configurator</h2>
+            <span className="mono">Study 03 — Interaction</span>
           </div>
 
-          <div className="v25-process-board" data-reveal>
-            <div className="v25-process-statement">
-              <span>PRODUCT STUDY / 01</span>
-              <h2>A chair is never just a chair.</h2>
-              <p>Material, proportion, joints, finish, context, variants, photography, information — and finally the moment a customer makes a choice.</p>
-            </div>
+          <fieldset className="v3-cfg">
+            <legend className="mono">A working fragment: three materials, one decision.</legend>
 
-            <div className="v25-process-object">
-              <ProductStudy variant="exploded" className="v25-process-art" />
-            </div>
+            {materials.map((m, i) => (
+              <input
+                key={m.id}
+                type="radio"
+                name="material"
+                id={`cfg-${m.id}`}
+                className={`v3-cfg-input v3-cfg-input-${m.id}`}
+                defaultChecked={i === 2}
+              />
+            ))}
 
-            <div className="v25-process-legend">
-              <span>01 / UNDERSTAND</span>
-              <span>02 / MAKE VISIBLE</span>
-              <span>03 / BUILD CONFIDENCE</span>
-              <span>04 / MAKE CHOICE EASIER</span>
+            <div className="v3-cfg-body">
+              <div className="v3-cfg-options">
+                {materials.map((m) => (
+                  <label key={m.id} htmlFor={`cfg-${m.id}`} className="v3-cfg-option">
+                    <img src={m.src} alt="" width={200} height={200} loading="lazy" decoding="async" />
+                    <span className="mono">{m.name}</span>
+                  </label>
+                ))}
+              </div>
+
+              <div className="v3-cfg-stage">
+                {materials.map((m) => (
+                  <figure key={m.id} className={`v3-cfg-view v3-cfg-view-${m.id}`}>
+                    <img src={m.src} alt={m.alt} width={1200} height={800} loading="lazy" decoding="async" />
+                    <figcaption className="mono">{m.name} — {m.detail}</figcaption>
+                  </figure>
+                ))}
+              </div>
             </div>
-          </div>
+          </fieldset>
+        </article>
+      </section>
+
+      <section id="services" className="v3-section shell">
+        <header className="v3-section-head">
+          <span className="mono">02 / What we make</span>
+          <p>We choose the medium after understanding what the product needs people to perceive.</p>
+        </header>
+
+        <div className="v3-services">
+          {services.map(([n, title, description]) => (
+            <article key={n} className="v3-service">
+              <span className="mono">{n}</span>
+              <h3>{title}</h3>
+              <p>{description}</p>
+            </article>
+          ))}
         </div>
       </section>
 
-      <section id="studio" className="v2-studio v2-shell v25-studio">
-        <span className="v2-label">04 / STUDIO</span>
-        <div className="v2-studio-grid" data-reveal>
+      <section id="approach" className="v3-approach">
+        <div className="shell">
+          <header className="v3-section-head">
+            <span className="mono">03 / How we see product</span>
+          </header>
+
+          <p className="v3-approach-statement">A chair is never just a chair.</p>
+          <p className="v3-approach-copy">
+            Material, proportion, joints, finish, context, variants, photography,
+            information — and finally the moment a customer makes a choice.
+          </p>
+
+          <ol className="v3-stages mono">
+            <li><span>01</span>Understand</li>
+            <li><span>02</span>Make visible</li>
+            <li><span>03</span>Build confidence</li>
+            <li><span>04</span>Make choice easier</li>
+          </ol>
+        </div>
+      </section>
+
+      <section id="studio" className="v3-section shell">
+        <header className="v3-section-head">
+          <span className="mono">04 / Studio</span>
+        </header>
+
+        <div className="v3-studio">
           <h2>Serious about the work.<br />Curious about everything.</h2>
-          <div>
-            <p>Modum is a creative and digital studio built around product understanding, visual craft and technical capability.</p>
-            <p>We do not start from the medium. We start from what the product is and what people need to understand.</p>
-            <div className="v2-founders">
-              <span>Giada Rossetti</span><i>/</i><span>Alberto G. Ferrario</span>
-            </div>
+          <div className="v3-studio-side">
+            <p>
+              Modum is a creative and digital studio built around product understanding,
+              visual craft and technical capability.
+            </p>
+            <p>
+              We do not start from the medium. We start from what the product is and what
+              people need to understand.
+            </p>
+            <p className="v3-founders">
+              Giada Rossetti <i aria-hidden="true">/</i> Alberto G. Ferrario
+            </p>
           </div>
         </div>
       </section>
 
-      <section id="contact" className="v2-contact v25-contact">
-        <div className="v2-contact-word" aria-hidden="true">/</div>
-        <div className="v2-shell v2-contact-inner" data-reveal>
-          <span className="v2-label">05 / START</span>
-          <h2>Show us<br />the product.</h2>
-          <div className="v2-contact-side">
-            <p>We will start by understanding what people need to see, know or experience.</p>
-            <a href={`mailto:${siteConfig.email}`}>{siteConfig.email} <span>↗</span></a>
-          </div>
-        </div>
+      <section id="contact" className="v3-contact shell">
+        <header className="v3-section-head">
+          <span className="mono">05 / Contact</span>
+        </header>
+
+        <p className="v3-contact-lead">Show us the product.</p>
+        <a className="v3-contact-mail" href={`mailto:${siteConfig.email}`}>
+          parliamo@<wbr />modumstudio.it
+        </a>
+        <p className="v3-contact-note">
+          We will start by understanding what people need to see, know or experience.
+        </p>
       </section>
 
-      <footer className="v2-footer v2-shell">
-        <BrandLogo className="v2-footer-logo" decorative />
-        <span>{siteConfig.domain}</span>
-        <span>© 2026</span>
+      <footer className="v3-footer shell">
+        <BrandLogo className="v3-footer-logo" decorative />
+        <span className="mono">{siteConfig.domain}</span>
+        <span className="mono">© 2026</span>
       </footer>
     </main>
   );
