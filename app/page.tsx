@@ -72,12 +72,28 @@ export default function HomePage() {
       </header>
 
       <section id="top" className="v3-hero shell" aria-label="Introduction">
-        <h1 className="v3-statement">
-          <span className="v3-statement-line">Make real</span>
-          <span className="v3-statement-line v3-step-1">product</span>
-          <span className="v3-statement-line v3-step-2">value</span>
-          <span className="v3-statement-line">visible<i className="v3-dot" aria-hidden="true">.</i></span>
-        </h1>
+        <div className="v3-hero-grid">
+          <h1 className="v3-statement">
+            <span className="v3-statement-line">Make real</span>
+            <span className="v3-statement-line v3-step-1">product</span>
+            <span className="v3-statement-line v3-step-2">value</span>
+            <span className="v3-statement-line">visible<i className="v3-dot" aria-hidden="true">.</i></span>
+          </h1>
+
+          <figure className="v3-hero-object">
+            <img
+              src="studies/object-chair.jpg"
+              alt="Chair photographed in studio light"
+              width={1400}
+              height={933}
+              decoding="async"
+            />
+            <figcaption className="mono">
+              <span>Object</span>
+              <span>Chair — studio light</span>
+            </figcaption>
+          </figure>
+        </div>
 
         <div className="v3-hero-foot">
           <p className="v3-hero-copy">
@@ -122,25 +138,19 @@ export default function HomePage() {
             <h2><i aria-hidden="true">/</i> Material</h2>
             <span className="mono">Study 01 — Photography</span>
           </div>
-          <div className="v3-study-material-grid">
-            <figure className="v3-study-material-main">
-              <img src={materials[0].src} alt={materials[0].alt} width={1200} height={800} loading="lazy" decoding="async" />
+          <p className="v3-study-material-q">
+            How much of a material survives the screen? Surface, grain and finish
+            photographed close enough to be judged, not decorated.
+          </p>
+          <div className="v3-bleed">
+            <figure>
+              <img src={materials[1].src} alt={materials[1].alt} width={1400} height={1050} loading="lazy" decoding="async" />
+              <figcaption className="mono">Textile — grey weave</figcaption>
             </figure>
-            <div className="v3-study-material-rail">
-              <p>
-                How much of a material survives the screen? Surface, grain and finish
-                photographed close enough to be judged, not decorated.
-              </p>
-              <ul className="mono">
-                <li>Oak — plank surface</li>
-                <li>Textile — grey weave</li>
-                <li>Steel — brushed finish</li>
-              </ul>
-              <div className="v3-study-material-thumbs">
-                <img src={materials[1].src} alt={materials[1].alt} width={600} height={400} loading="lazy" decoding="async" />
-                <img src={materials[2].src} alt={materials[2].alt} width={600} height={400} loading="lazy" decoding="async" />
-              </div>
-            </div>
+            <figure>
+              <img src={materials[2].src} alt={materials[2].alt} width={1100} height={1955} loading="lazy" decoding="async" />
+              <figcaption className="mono">Steel — brushed finish</figcaption>
+            </figure>
           </div>
         </article>
 
@@ -156,7 +166,7 @@ export default function HomePage() {
               <span>Product information as a system: hierarchy first, decoration never.</span>
             </div>
             <div className="v3-sheet v3-sheet-dark">
-              <small className="mono">Catalog exercise / 01–96</small>
+              <small className="mono">Catalog exercise — spread</small>
               <strong>Matter</strong>
               <span>Objects, details, variants — ordered so a reader can decide.</span>
             </div>
@@ -229,11 +239,27 @@ export default function HomePage() {
             <span className="mono">03 / How we see product</span>
           </header>
 
-          <p className="v3-approach-statement">A chair is never just a chair.</p>
-          <p className="v3-approach-copy">
-            Material, proportion, joints, finish, context, variants, photography,
-            information — and finally the moment a customer makes a choice.
-          </p>
+          <div className="v3-approach-grid">
+            <div>
+              <p className="v3-approach-statement">A chair is never just a chair.</p>
+              <p className="v3-approach-copy">
+                Material, proportion, joints, finish, context, variants, photography,
+                information — and finally the moment a customer makes a choice.
+              </p>
+            </div>
+
+            <figure className="v3-approach-object">
+              <img
+                src="studies/object-armchair.jpg"
+                alt="Armchair with fabric cushions and leather shell on a dark ground"
+                width={1400}
+                height={787}
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption className="mono">Armchair — fabric / leather shell</figcaption>
+            </figure>
+          </div>
 
           <ol className="v3-stages mono">
             <li><span>01</span>Understand</li>
