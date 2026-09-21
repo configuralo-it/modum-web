@@ -2290,3 +2290,13 @@ button:focus-visible{
 @media(prefers-reduced-motion:reduce){
   .v2-nav a:after{transition:none}
 }
+
+
+/* MOD-WEB-001 v2.1 — first live review corrections */
+.v2-work-meta p{color:#68666a}
+@media(max-width:640px){
+  .v2-hero-wordmark{width:165vw;left:-38vw}
+  .v2-service-list p{font-size:13px;line-height:1.48}
+  .v2-work-meta span,.v2-work-meta p{font-size:9.5px}
+  .v2-section-head p{font-size:13.5px;line-height:1.45}
+}
