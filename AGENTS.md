@@ -164,3 +164,81 @@ Before motion:
 ## Gate
 Stop at INTERNAL REVIEW.
 Do not treat the design as APPROVED or DELIVERY without Control Room / cofounder review.
+
+
+## CONTROL ROOM OVERRIDE — ART DIRECTION V3 — 21/09/2026
+
+### FACT
+The v2.6.1 implementation is technically healthy but has been rejected qualitatively by Control Room.
+
+### FACT
+Green CI, Lighthouse, accessibility, and responsive correctness do **not** imply acceptable creative quality.
+
+### DECISION
+Treat v2.6.1 as a failed visual experiment, not as the design baseline to polish.
+
+### DECISION
+Do not continue with incremental CSS refinements to v2.6.1.
+
+### DECISION
+Start **ART DIRECTION V3** from the quality bar established by the selected references and rebuild the visual system around better assets, typography, composition, and interaction.
+
+### PRIMARY QUALITY GAP
+The current site still reads as:
+- a competent agency mockup;
+- procedural placeholder art;
+- contemporary-design tropes applied to weak content;
+- oversized typography without enough proprietary logic;
+- technical annotations used decoratively;
+- sections rather than a continuous designed experience.
+
+It must instead read as:
+- a serious creative/product studio;
+- product-led;
+- materially believable;
+- editorially controlled;
+- visually ownable;
+- commercially clear;
+- at the quality level of the selected references.
+
+### V3 REFERENCE BAR
+Study these for principles, not imitation:
+- Teenage Engineering — https://teenage.engineering/
+- Vitsœ — https://www.vitsoe.com/
+- Porto Rocha — https://www.portorocha.com/
+- Bakken & Bæck — https://bakkenbaeck.com/
+- Actual Source — https://actualsource.work/
+- Formafantasma — https://formafantasma.com/
+
+### V3 WORKING RULES
+1. **Assets before decoration.**
+   Do not ask weak procedural SVG/CSS art to carry premium art direction.
+2. **Typography before effects.**
+   The temporary type bridge may change. The future proprietary Modum typeface remains planned.
+3. **Composition before motion.**
+   A still screenshot must already look strong.
+4. **Product before interface.**
+   The website should feel built around product evidence, not UI components.
+5. **No fake clients.**
+   Modum Studio Studies remain explicit placeholders.
+6. **External assets/technology are allowed when useful**, but verify provenance/licensing and keep dependencies justified.
+7. **No WebGL/shader/3D merely for novelty.**
+   Use technology only when it materially improves perception.
+8. **Do not optimize for Lighthouse at the expense of art direction.**
+   Keep the site healthy, but technical scores are a gate, not the goal.
+9. **Use screenshot-based review after every meaningful iteration.**
+10. **Use the project critic subagent before declaring a direction ready.**
+
+### V3 STOP CONDITION
+Do not claim success because:
+- CI passes;
+- the page is responsive;
+- Lighthouse is green;
+- there is a large logo;
+- there is motion;
+- the design resembles a reference superficially.
+
+Success requires the visual comparison itself to hold up.
+
+### CURRENT STATUS
+ART DIRECTION V3 — DELEGATED EXECUTION.
