@@ -1,226 +1,166 @@
 # AGENTS.md — MOD-WEB-001
 
 ## Mission
-Implement the Modum Studio website v1 as a high-fidelity interactive prototype ready for internal review.
+Implement the Modum Studio website v1 as a high-fidelity prototype ready for internal review.
 
-## Source of truth
-Strategic and brand decisions live in Modum OS / Google Drive.
-Repository decisions must not override Control Room decisions.
+## Governance
+Strategic, brand and art-direction decisions live in Modum OS / Google Drive.
+Control Room decisions override repository notes and previous prototype baselines.
 
 Canonical docs:
-- MOD-WEB-001 — Sito Modum Studio — Brief agente developer
-- MOD-WEB-001 — Website Launch Pack v0.1
-- Modum Studio — Brand Foundations v0.1
-- Modum Studio — Visual Identity Direction v0.1
+- MOD-WEB-001 — Art Direction & Reference Plan v0.1
 - MOD-WEB-001 — Homepage Experience Spec v0.1
+- Modum Studio — Visual Identity Direction v0.1
+- Modum Studio — Brand Foundations v0.1
+- MOD-WEB-001 — Website Launch Pack v0.1
 
-## Approved decisions
-- Services: 3D Rendering; Cataloghi & Brochure; Foto & Video; Product Configurators; Web & E-commerce; AI Strategy & Automation.
-- Target: product companies in furniture, design and manufacturing.
+## Current Control Room state — 21/09/2026
+
+FACT
+The existing live homepage is a valid TECHNICAL BASELINE only.
+
+FACT
+Layout, design and style of the previous homepage were rejected by Control Room.
+
+DECISION
+Creative status is:
+ART DIRECTION / HOMEPAGE SYSTEM DESIGN.
+
+DECISION
+Do not cosmetically refine the old hero.
+The visual structure may be redesigned radically while preserving useful infrastructure.
+
+DECISION
+Current direction synthesis:
+MODUM FIRST × PRODUCT FIRST
+with PROCESS FIRST as a secondary narrative layer.
+
+Formula:
+IDENTITY SETS THE FRAME.
+PRODUCT PROVES THE VALUE.
+PROCESS EXPLAINS THE DEPTH.
+
+## Approved brand inputs
+- Services:
+  - 3D Rendering
+  - Catalogs & Brochures
+  - Photo & Video
+  - Product Configurators
+  - Web & E-commerce
+  - AI Strategy & Automation
+- Target: product companies, initially strong relevance to furniture, design and manufacturing.
 - Brand Soul: reduce the distance between the real product and what a customer can perceive before having it in front of them.
 - Brand architecture: Product Truth + Commercial Clarity.
-- Visual/motion baseline: controlled futurism, less entropy, editorial structure, large organic curves, a few slowly morphing blob-like shapes, animated interactive 3D hero object, controlled variation and unpredictability.
+- Existing Modum identity assets are the evolution source.
+- Verified palette:
+  - Warm Paper #FFF7F4
+  - Charcoal #3C3F45
+- Signal orange may be used as a restrained accent.
+- Existing wordmark, crop and slash are structural identity tools.
+- Montserrat + Poppins are transitional only.
+- DEC-006 remains in force: Modum will develop a proprietary typeface.
 
-## Character
-Modum is curious, exacting, inventive and commercially lucid.
+## Current art-direction rules
 
-Internal principles:
-- Understand before amplify.
-- Do not make it different. Make it better.
-- Does it get better when you look closer?
-- Curiosity asks. Conviction decides. Taste edits. Commerce tests. Craft proves.
+### Identity
+- The wordmark may become architecture, not merely a header logo.
+- Oversized crop is allowed when it creates structure.
+- Slash may divide, align, annotate or create tension.
+- Avoid decorative brand fragments that do not affect composition.
 
-## Working visual system
-Verified identity bridge:
-- Montserrat Variable — headings, structural UI, labels and technical metadata.
-- Poppins Regular — body copy and descriptive text.
-- Warm Paper #FFF7F4.
-- Charcoal #3C3F45.
-- Signal Orange #FF4D00.
-- Existing Modum wordmark/glyph fragments may be used as controlled structural devices.
-
-DEC-006 remains in force: Modum will develop its own proprietary typeface.
-Montserrat + Poppins are a transitional bridge derived from the existing identity assets, not the final type system.
-
-Visual identity source:
-- Existing Modum brand assets are the historical DNA to evolve from.
-- Do not introduce an unrelated visual language when an existing Modum element can do the job.
-- Motion, 3D, technical annotations and signal orange must evolve this identity rather than replace it.
-
-These values remain subject to validation against real portfolio assets before final production approval.
-
-## Homepage behavior
-
-### Hero
-- Full viewport or near-full viewport.
-- Strong HTML headline and concise copy.
-- Dominant interactive 3D object.
-- Object should feel like a plausible designed artifact, not a random blob.
-- 1–2 large organic background shapes with slow restrained morphing.
-- Less entropy: avoid simultaneous decorative motion.
-- Pointer response limited and controlled.
-- Progressive enhancement and static fallback required.
-
-### Motion
-- Slow atmospheric: 8–20s.
-- Medium section/navigation: 350–700ms.
-- Fast UI feedback: 120–220ms.
-- prefers-reduced-motion required.
-- If nothing changes in meaning, nothing needs to move.
+### Product
+- Product must be protagonist or evidence.
+- Favor material, proportion, construction, detail and context.
+- A study object may be used only when clearly presented as a Modum Studio Study.
+- No invented client work.
 
 ### Layout
-- Stable editorial grid with occasional intentional breaks.
-- Max 2–3 major curved/organic transitions on the homepage.
+- Editorial structure.
+- Large scale shifts.
+- Strong negative space where useful.
+- Density only when information benefits from it.
 - Avoid cardification.
-- Alternate light/dark only when it improves narrative rhythm.
+- Avoid standard agency section rhythm.
+- Selected Work should feel composed, not templated.
 
-### Signature interactions
-Prioritize:
-1. Inspect
-2. Annotate
-3. Compare when real content supports it
-4. Controlled morph
-5. One meaningful grid break per major section at most
+### Process
+Use technical/process language selectively:
+- detail
+- material
+- construction
+- variants
+- configuration
+- exploded views
+- annotations
 
-## Scope v1
-- Hero
-- Selected Work
-- What We Do / Services
-- Approach / Product Truth
-- Product Detail Moment
-- Studio
-- Contact
-- Footer
+Process is a secondary layer, not the entire visual identity.
 
-## Technical baseline
+### Motion
+STATIC FIRST.
+No motion is required in the current homepage-system gate.
+
+Only after static composition is approved:
+- add motion with a specific job;
+- keep reduced-motion fallback;
+- no spectacle used to rescue weak composition.
+
+### Explicitly killed as primary language
+- blob/organic-surface-led hero;
+- dominant 3D object simply because the hero needs a 3D object;
+- circular technical orbit decoration;
+- constant atmospheric motion;
+- generic service cards;
+- excessive above-the-fold annotations;
+- stacking high-cost visual systems.
+
+## Working homepage architecture
+01 — Opening / Identity + Product
+02 — Selected Work
+03 — What We Make
+04 — How We See Product
+05 — Studio
+06 — Contact
+
+## Static-first gate
+Before motion:
+- desktop hierarchy approved;
+- mobile hierarchy approved;
+- typography behavior approved;
+- image/product behavior approved;
+- selected-work behavior approved;
+- wordmark/slash rules approved.
+
+## Technical baseline to preserve
 - Next.js App Router
 - TypeScript
-- Tailwind CSS
-- React Three Fiber / Three.js allowed for hero only
-- Framer Motion or Motion One for UI/section motion
-- GSAP only if a specific sequence materially justifies it
-- SVG/CSS before shaders for simple morphing
-- static-first outside 3D/motion surfaces
-- no CMS, DB or auth
+- static export / GitHub Pages pipeline
+- metadata / structured data
+- accessible navigation and focus states
+- case-study data architecture
+- production-quality responsive behavior
+- no CMS, DB or auth for v1
+
+3D / R3F may remain in the repository as experimental infrastructure, but it is not required in the current homepage composition.
 
 ## Non-negotiables
 - No invented clients, metrics, awards, results or testimonials.
-- Do not copy logos/client names from exploratory mockups.
-- Missing real content = explicit TODO / placeholder.
+- Missing real content must be clearly treated as a Modum Study or explicit internal placeholder.
+- No fake portfolio claims.
 - Accessibility and keyboard/focus states.
-- HTML content independent from WebGL.
-- Production-quality responsive behavior.
 - No scroll hijacking.
-- No heavy autoplay video above the fold.
-- No decorative tech effects competing with the product.
-- Keep motion optional and degradable.
+- No heavy autoplay media above the fold.
+- Mobile is composed independently, not a desktop miniature.
 
-## Performance
-- UI usable before 3D finishes loading.
-- Optimized GLB, compressed textures, simple lighting.
-- No duplicate animation libraries.
-- Simplify 3D/motion on mobile if needed.
-- Avoid layout shift and blocking asset loads.
-
-## Workflow
-1. Inspect repository.
-2. Summarize architecture and constraints.
-3. Propose a very short implementation plan.
-4. Build the homepage prototype.
-5. Use explicit placeholders for unavailable portfolio/logo assets.
-6. Run lint, typecheck, tests if present, and production build.
-7. Fix issues introduced by the implementation.
-8. Report files changed, checks run, results, blockers and TODOs.
+## Review tests
+1. Is it clear before it is interesting?
+2. Does the product become more understandable rather than merely decorated?
+3. Could this belong to any contemporary creative studio?
+4. Does it get better when you look closer?
+5. Is there one controlled, intentional disruption?
+6. Can the system host 3D, editorial, photo/video, configurators, web and AI work?
+7. Does it work with real content rather than only idealized mock content?
+8. Does it work completely still?
 
 ## Gate
 Stop at INTERNAL REVIEW.
-Do not treat the design as final or deploy as APPROVED without both cofounders' review.
-
-## Review principle
-If the website is interesting only because it moves, the direction is wrong.
-It should work when static; motion should make it feel more alive, not make it understandable.
-
-
-## Technology scouting from visual references
-
-Every visual reference supplied by Control Room must also be checked as a possible implementation technology, not only as moodboard material.
-
-### Cult UI
-Use case: localized distorted-glass / SVG-filter interactions.
-Status: approved candidate.
-Rules:
-- copy/adapt source locally;
-- keep the effect rare and localized;
-- test Safari/Firefox/Chrome;
-- preserve readable fallback;
-- do not adopt Cult UI as the site's whole design system.
-
-### Refero Styles / Refero MCP
-Use case: research and validation of design systems, spacing, typography, tokens and real product-site patterns.
-Status: approved research tool, not a runtime dependency.
-Rules:
-- use for comparative evidence;
-- do not wholesale-copy third-party systems;
-- extract principles, not identity.
-
-### Originkit
-Use case: source for one-off animated interaction primitives.
-Status: approved for selective evaluation.
-Rules:
-- define the interaction job first;
-- inspect dependencies and source;
-- copy locally only when licensing permits;
-- strip unused options;
-- verify accessibility and bundle cost;
-- do not let Originkit define the site's visual language.
-
-### Casberry AI Particle Simulator
-Use case: generative / particle prototype source.
-Status: prototype candidate only.
-Rules:
-- use for experimentation/export;
-- if selected, recreate or own the relevant Three.js/R3F behavior locally;
-- profile GPU/CPU/mobile;
-- reduce particle count aggressively;
-- never run a heavy particle system alongside the full hero WebGL scene unless the entropy/performance budget allows it.
-
-### Technology selection test
-A reference becomes production technology only if:
-1. it performs a specific visual or interaction job;
-2. that job matters to the Modum character;
-3. we can understand and own the source;
-4. accessibility is preserved;
-5. mobile works or degrades cleanly;
-6. performance remains inside budget;
-7. licensing is clear;
-8. the effect is still good after the novelty wears off.
-
-### Entropy rule
-At any viewport:
-- one major high-cost visual system maximum;
-- secondary effects should be CSS/SVG/lightweight;
-- do not stack hero WebGL + particle simulation + glass shader + text shader simultaneously.
-
-
-## DEC-006 — Proprietary Modum Typeface
-
-Modum Studio will develop its own proprietary typeface.
-
-Until that typeface exists:
-- Montserrat + Poppins are the approved transitional bridge because they are verified in the existing Modum identity assets;
-- do not treat either font as the final brand identity;
-- layout and component choices should avoid becoming dependent on quirks of the transitional fonts;
-- keep typography integration modular so the proprietary Modum typeface can replace them cleanly later.
-
-## DEC-007 — Existing identity assets as evolution source
-
-Existing Modum assets are the historical/visual DNA for the digital identity.
-Verified cues include:
-- warm paper / charcoal palette;
-- strong custom wordmark;
-- wide tracking;
-- slash separators;
-- generous negative space;
-- oversized/cropped wordmark or glyph fragments.
-
-Newer layers — signal orange, motion, 3D, morphing surfaces and technical annotations — must feel like an evolution of this DNA, not a parallel style.
+Do not treat the design as APPROVED or DELIVERY without Control Room / cofounder review.
