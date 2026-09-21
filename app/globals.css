@@ -1169,3 +1169,67 @@ button:focus-visible{
     transform:translate(-48%,-48%) rotate(-6deg);
   }
 }
+
+
+/* MOD-WEB-001 v1.3 — mobile hero: copy first, product second */
+@media(max-width:640px){
+  .hero{
+    min-height:auto;
+    padding-top:72px;
+    display:grid;
+    grid-template-columns:1fr;
+    grid-template-rows:auto auto auto;
+  }
+  .hero-copy{
+    position:relative;
+    z-index:4;
+    padding:58px 0 18px;
+  }
+  .hero h1{
+    font-size:54px;
+    max-width:350px;
+  }
+  .hero-stage{
+    position:relative;
+    z-index:2;
+    top:auto;
+    right:auto;
+    width:100%;
+    height:330px;
+    min-height:330px;
+    margin-top:8px;
+    pointer-events:auto;
+  }
+  .hero-canvas{
+    inset:-18px -28vw -16px -18vw;
+  }
+  .hero-object-fallback{
+    width:90%;
+    left:52%;
+    top:49%;
+    opacity:.96;
+  }
+  .shape-a{
+    right:-152px;
+    top:45%;
+    width:300px;
+    height:250px;
+    opacity:.66;
+  }
+  .hero-orbit{
+    right:-40px;
+    top:55%;
+    width:148px;
+    opacity:.46;
+  }
+  .hero-membrane{
+    width:96%;
+    height:20%;
+    right:-42%;
+    bottom:4%;
+    opacity:.62;
+  }
+  .hero-meta{
+    margin-top:4px;
+  }
+}
