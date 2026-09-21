@@ -25,3 +25,34 @@
 .hero-object-fallback__signal{position:absolute;width:52%;height:7px;right:2%;top:54%;border-radius:999px;background:var(--signal);box-shadow:0 0 18px rgba(255,77,0,.22)}
 @media(max-width:640px){.hero-object-fallback{width:92%;transform:translate(-48%,-48%) rotate(-7deg)}}
 @media(prefers-reduced-motion:reduce){.hero-object-fallback{transition:none}}
+
+
+/* MOD-WEB-001 v0.2 — compositor-only hero idle motion */
+.hero-canvas{
+  animation:heroCanvasFloat 18s cubic-bezier(.45,.05,.25,1) infinite alternate;
+  transform-origin:52% 48%;
+  will-change:transform;
+}
+.hero-object-fallback{
+  animation:heroFallbackFloat 16s cubic-bezier(.45,.05,.25,1) infinite alternate;
+  will-change:transform;
+}
+@keyframes heroCanvasFloat{
+  0%{transform:translate3d(-3px,-4px,0) rotate(-.35deg)}
+  48%{transform:translate3d(4px,2px,0) rotate(.12deg)}
+  100%{transform:translate3d(8px,7px,0) rotate(.48deg)}
+}
+@keyframes heroFallbackFloat{
+  0%{transform:translate(-46%,-49%) rotate(-7.4deg) scale(.995)}
+  50%{transform:translate(-45.5%,-48%) rotate(-6.8deg) scale(1.01)}
+  100%{transform:translate(-46.5%,-47.5%) rotate(-7.15deg) scale(1)}
+}
+@media(max-width:640px){
+  @keyframes heroFallbackFloat{
+    0%{transform:translate(-48%,-49%) rotate(-7.4deg) scale(.99)}
+    100%{transform:translate(-47%,-47.5%) rotate(-6.8deg) scale(1.01)}
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .hero-canvas,.hero-object-fallback{animation:none!important;will-change:auto}
+}
