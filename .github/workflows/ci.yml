@@ -134,11 +134,17 @@ jobs:
 
           npx --yes playwright@1.55.0 screenshot             --browser chromium             --viewport-size "240,520"             "$PAGE_URL"             review/hero-mobile.jpeg
 
+          npx --yes playwright@1.55.0 screenshot             --browser chromium             --viewport-size "960,640"             "$PAGE_URL#work"             review/work-desktop.jpeg
+
+          npx --yes playwright@1.55.0 screenshot             --browser chromium             --viewport-size "960,640"             "$PAGE_URL#approach"             review/approach-desktop.jpeg
+
+          npx --yes playwright@1.55.0 screenshot             --browser chromium             --viewport-size "960,640"             "$PAGE_URL#contact"             review/contact-desktop.jpeg
+
       - name: Persist review artifacts
         run: |
           git config user.name "modum-review-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add review/lighthouse.json review/lighthouse-summary.json review/latest-desktop.png review/latest-mobile.png review/hero-desktop.jpeg review/hero-mobile.jpeg
+          git add review/lighthouse.json review/lighthouse-summary.json review/latest-desktop.png review/latest-mobile.png review/hero-desktop.jpeg review/hero-mobile.jpeg review/work-desktop.jpeg review/approach-desktop.jpeg review/contact-desktop.jpeg
           if git diff --cached --quiet; then
             echo "No review artifact changes."
           else
