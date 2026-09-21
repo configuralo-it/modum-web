@@ -138,7 +138,7 @@
 }
 .project-info button:hover{transform:rotate(45deg);background:var(--ink);color:white}
 .project-object:after{
-  content:"ASSET / PENDING";
+  content:"STUDIO / STUDY";
   position:absolute;
   right:14px;bottom:14px;
   padding:7px 9px;
@@ -373,7 +373,7 @@
   box-shadow:0 0 20px rgba(255,77,0,.24);
   transform:rotate(-8deg);
 }
-.project-1 .project-object:after{content:"MATERIAL STUDY / PLACEHOLDER"}
+.project-1 .project-object:after{content:"MATERIAL STUDY / MODUM"}
 
 /* 02 — editorial / catalog */
 .project-2 .project-object{
@@ -426,7 +426,7 @@
   border-top:1px solid rgba(20,20,18,.3);
   border-bottom:1px solid rgba(20,20,18,.3);
 }
-.project-2 .project-object:after{content:"EDITORIAL STUDY / PLACEHOLDER"}
+.project-2 .project-object:after{content:"EDITORIAL STUDY / MODUM"}
 
 /* 03 — product configurator / digital instrument */
 .project-3 .project-object{
@@ -469,7 +469,7 @@
     repeating-linear-gradient(180deg,transparent 0 31px,rgba(241,240,234,.22) 31px 32px);
 }
 .project-3 .project-object:after{
-  content:"CONFIGURATOR STUDY / PLACEHOLDER";
+  content:"CONFIGURATOR STUDY / MODUM";
   background:rgba(20,20,18,.74);
   color:#f1f0ea;
   border-color:rgba(241,240,234,.14);
