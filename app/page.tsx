@@ -1,4 +1,4 @@
-import { HeroScene } from '@/components/HeroScene';
+import { HeroStage } from '@/components/HeroStage';
 import { Reveal } from '@/components/Reveal';
 import { DistortedLens } from '@/components/DistortedLens';
 
@@ -44,7 +44,7 @@ export default function HomePage() {
           </div>
         </div>
         <div className="hero-stage">
-          <HeroScene />
+          <HeroStage />
           <div className="annotation annotation-a"><span>Material</span><b>surface / volume / edge</b></div>
           <div className="annotation annotation-b"><span>Product truth</span><b>made visible</b></div>
         </div>
