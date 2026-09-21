@@ -1,68 +1,45 @@
-'use client';
+const heroBootstrap = String.raw`
+(() => {
+  const shell = document.currentScript?.previousElementSibling;
+  if (!(shell instanceof HTMLElement)) return;
 
-import { ComponentType, useEffect, useState } from 'react';
+  let loading = false;
+  let mounted = false;
 
-type SceneModule = { HeroScene: ComponentType };
+  const cleanupTriggers = () => {
+    window.removeEventListener('pointermove', start);
+    window.removeEventListener('touchstart', start);
+    window.removeEventListener('scroll', start);
+    window.removeEventListener('keydown', start);
+  };
 
-function supportsWebGL() {
-  try {
-    const canvas = document.createElement('canvas');
+  async function start() {
+    if (loading || mounted) return;
+    loading = true;
 
-    const webgl2 =
-      typeof window.WebGL2RenderingContext !== 'undefined' &&
-      canvas.getContext('webgl2');
-
-    if (webgl2) return true;
-
-    return Boolean(
-      typeof window.WebGLRenderingContext !== 'undefined' &&
-        (canvas.getContext('webgl') || canvas.getContext('experimental-webgl')),
-    );
-  } catch {
-    return false;
+    try {
+      const url = new URL('hero-scene.js', document.baseURI).href;
+      const mod = await import(url);
+      mod.mountHero?.(shell);
+      mounted = shell.dataset.webgl === 'true';
+      if (mounted) cleanupTriggers();
+      else loading = false;
+    } catch {
+      loading = false;
+    }
   }
-}
+
+  window.addEventListener('pointermove', start, { passive: true, once: true });
+  window.addEventListener('touchstart', start, { passive: true, once: true });
+  window.addEventListener('scroll', start, { passive: true, once: true });
+  window.addEventListener('keydown', start, { once: true });
+})();
+`;
 
 export function HeroStage() {
-  const [Scene, setScene] = useState<ComponentType | null>(null);
-
-  useEffect(() => {
-    let cancelled = false;
-    let loading = false;
-
-    const load = async () => {
-      if (loading || cancelled || !supportsWebGL()) return;
-      loading = true;
-
-      try {
-        const mod = (await import('./HeroScene')) as SceneModule;
-        if (!cancelled) setScene(() => mod.HeroScene);
-      } catch {
-        loading = false;
-      }
-    };
-
-    const onIntent = () => {
-      void load();
-    };
-
-    window.addEventListener('pointermove', onIntent, { passive: true, once: true });
-    window.addEventListener('touchstart', onIntent, { passive: true, once: true });
-    window.addEventListener('scroll', onIntent, { passive: true, once: true });
-    window.addEventListener('keydown', onIntent, { once: true });
-
-    return () => {
-      cancelled = true;
-      window.removeEventListener('pointermove', onIntent);
-      window.removeEventListener('touchstart', onIntent);
-      window.removeEventListener('scroll', onIntent);
-      window.removeEventListener('keydown', onIntent);
-    };
-  }, []);
-
   return (
-    <div className="hero-visual-shell">
-      {!Scene && (
+    <>
+      <div className="hero-visual-shell">
         <div className="hero-object-fallback" aria-hidden="true">
           <div className="hero-object-fallback__back" />
           <div className="hero-object-fallback__seat" />
@@ -71,8 +48,9 @@ export function HeroStage() {
           <div className="hero-object-fallback__crossbar" />
           <div className="hero-object-fallback__joint" />
         </div>
-      )}
-      {Scene ? <Scene /> : null}
-    </div>
+        <canvas className="hero-canvas" data-hero-canvas aria-hidden="true" />
+      </div>
+      <script dangerouslySetInnerHTML={{ __html: heroBootstrap }} />
+    </>
   );
 }
