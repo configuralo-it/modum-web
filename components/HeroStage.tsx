@@ -23,8 +23,6 @@ export function HeroStage() {
       void load();
     };
 
-    const timeout = window.setTimeout(load, 6500);
-
     window.addEventListener('pointermove', onIntent, { passive: true, once: true });
     window.addEventListener('touchstart', onIntent, { passive: true, once: true });
     window.addEventListener('scroll', onIntent, { passive: true, once: true });
@@ -32,7 +30,6 @@ export function HeroStage() {
 
     return () => {
       cancelled = true;
-      window.clearTimeout(timeout);
       window.removeEventListener('pointermove', onIntent);
       window.removeEventListener('touchstart', onIntent);
       window.removeEventListener('scroll', onIntent);
