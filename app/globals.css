@@ -3128,3 +3128,26 @@ button:focus-visible{
     transition:none!important;
   }
 }
+
+
+/* MOD-WEB-001 v2.6.1 — annotation/crop cleanup */
+.v25-object-note-a{
+  top:auto;
+  right:1%;
+  bottom:5%;
+}
+.v25-preview-product .v25-work-product-art{
+  transform:translate3d(1.5%,-2%,0) scale(1.22);
+}
+@media(max-width:640px){
+  .v25-object-note-a{
+    top:auto;
+    right:0;
+    bottom:2%;
+    max-width:none;
+    text-align:right;
+  }
+  .v25-preview-product .v25-work-product-art{
+    transform:translate3d(1.5%,-1%,0) scale(1.12);
+  }
+}
