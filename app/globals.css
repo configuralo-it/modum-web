@@ -178,3 +178,104 @@
 @media(prefers-reduced-motion:reduce){
   .hero-membrane{animation:none!important}
 }
+
+
+/* MOD-WEB-001 v0.4 — product presence above the fold */
+.hero-object-fallback{
+  filter:drop-shadow(0 28px 48px rgba(20,20,18,.13));
+}
+.hero-object-fallback__body{
+  background:
+    radial-gradient(circle at 26% 20%,rgba(255,255,255,.82),transparent 29%),
+    linear-gradient(145deg,#eeeae2 0%,#c9c2b7 48%,#a9a198 100%);
+  border:1px solid rgba(20,20,18,.1);
+  box-shadow:
+    inset -38px -32px 78px rgba(20,20,18,.16),
+    inset 24px 20px 52px rgba(255,255,255,.68),
+    0 1px 0 rgba(255,255,255,.68);
+}
+.hero-object-fallback__body:after{
+  background:rgba(241,240,234,.94);
+  border:1px solid rgba(20,20,18,.07);
+  box-shadow:
+    inset 14px 12px 32px rgba(20,20,18,.08),
+    0 0 0 10px rgba(255,255,255,.045);
+}
+.hero-object-fallback__signal{
+  height:6px;
+  width:46%;
+  box-shadow:0 0 15px rgba(255,77,0,.2);
+}
+
+@media(max-width:640px){
+  .hero{
+    position:relative;
+    min-height:820px;
+  }
+  .hero-copy{
+    position:relative;
+    z-index:4;
+    padding-top:118px;
+  }
+  .hero-stage{
+    position:absolute;
+    z-index:2;
+    top:54px;
+    right:-32px;
+    width:72vw;
+    height:292px;
+    min-height:0;
+    pointer-events:none;
+  }
+  .hero-canvas{
+    inset:-18px -20vw -12px -16vw;
+  }
+  .hero-object-fallback{
+    width:108%;
+    left:58%;
+    top:45%;
+    opacity:.9;
+  }
+  .shape-a{
+    right:-122px;
+    top:-34px;
+    width:260px;
+    height:220px;
+    opacity:.72;
+  }
+  .shape-b{
+    left:auto;
+    right:8%;
+    top:128px;
+    width:118px;
+    height:108px;
+    opacity:.55;
+  }
+  .hero-orbit{
+    right:-70px;
+    top:82px;
+    width:190px;
+    opacity:.55;
+  }
+  .hero-membrane{
+    bottom:1%;
+    opacity:.7;
+  }
+
+  .project-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    grid-template-rows:auto;
+    row-gap:54px;
+  }
+  .project-1,.project-2,.project-3{
+    display:block;
+    grid-row:auto;
+    width:100%;
+    margin-top:0;
+    justify-self:stretch;
+  }
+  .project-1 .project-visual{height:430px}
+  .project-2 .project-visual{height:330px}
+  .project-3 .project-visual{height:300px}
+}
