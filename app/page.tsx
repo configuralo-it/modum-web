@@ -59,8 +59,8 @@ export default function HomePage() {
         </div>
         <div className="hero-stage">
           <HeroStage />
-          <div className="annotation annotation-a"><span>Material</span><b>surface / volume / edge</b></div>
-          <div className="annotation annotation-b"><span>Product truth</span><b>made visible</b></div>
+          <div className="annotation annotation-a"><span>Construction</span><b>shell / frame / joint</b></div>
+          <div className="annotation annotation-b"><span>Product study</span><b>form / material / detail</b></div>
         </div>
         <div className="hero-meta mono">
           <span>SCROLL</span><i />
