@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "predev": "node scripts/prepare-static.mjs",
+    "prebuild": "node scripts/prepare-static.mjs"
   },
   "dependencies": {
     "@react-three/fiber": "9.7.0",
