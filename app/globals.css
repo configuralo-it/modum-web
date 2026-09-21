@@ -679,3 +679,26 @@ h1,h2,h3,
   color:var(--signal);
   font-style:normal;
 }
+
+
+/* MOD-WEB-001 v1.0-prep — interaction polish */
+a,
+button{
+  -webkit-tap-highlight-color:transparent;
+}
+a:focus-visible,
+button:focus-visible{
+  outline:2px solid var(--signal);
+  outline-offset:4px;
+  border-radius:4px;
+}
+.footer-domain{
+  text-decoration:none;
+  transition:opacity .18s ease;
+}
+.footer-domain:hover{
+  opacity:.62;
+}
+@media(prefers-reduced-motion:reduce){
+  .footer-domain{transition:none}
+}
