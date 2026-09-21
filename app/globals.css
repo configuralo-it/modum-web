@@ -1683,3 +1683,72 @@ button:focus-visible{
     will-change:auto;
   }
 }
+
+
+/* MOD-WEB-001 v1.2 — low-entropy intent interactions */
+.service-row{
+  position:relative;
+}
+.service-row>span,
+.service-row h3,
+.service-row p{
+  transition:
+    transform .24s cubic-bezier(.2,.7,.2,1),
+    color .24s ease,
+    opacity .24s ease;
+}
+.project-visual .project-object,
+.project-visual .study-shape,
+.project-visual .study-detail{
+  transition:
+    transform .42s cubic-bezier(.2,.7,.2,1),
+    filter .42s ease;
+}
+.project-marker{
+  transition:
+    border-color .24s ease,
+    color .24s ease,
+    transform .24s cubic-bezier(.2,.7,.2,1);
+}
+
+@media(hover:hover) and (pointer:fine){
+  .service-row:hover>span{
+    color:var(--signal);
+    transform:translateX(3px);
+  }
+  .service-row:hover h3{
+    transform:translateX(7px);
+  }
+  .service-row:hover p{
+    transform:translateX(-3px);
+    color:var(--ink);
+  }
+
+  .project:hover .project-object{
+    transform:scale(1.018);
+  }
+  .project:hover .study-shape{
+    transform:translate3d(5px,-4px,0) rotate(.7deg);
+  }
+  .project:hover .study-detail{
+    transform:translate3d(-4px,3px,0);
+  }
+  .project:hover .project-marker{
+    color:var(--signal);
+    border-color:rgba(255,77,0,.38);
+    transform:translateY(-2px);
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  .service-row>span,
+  .service-row h3,
+  .service-row p,
+  .project-visual .project-object,
+  .project-visual .study-shape,
+  .project-visual .study-detail,
+  .project-marker{
+    transition:none!important;
+    transform:none!important;
+  }
+}
