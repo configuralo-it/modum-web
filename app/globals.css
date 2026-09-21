@@ -156,7 +156,6 @@
   border-left:18px solid var(--signal);
   border-right:1px solid rgba(20,20,18,.28);
 }
-.prototype-cta{cursor:not-allowed;appearance:none;font-family:inherit}
 @media(max-width:1000px){
   .hero-membrane{width:72%;height:30%;right:-20vw}
   .hero-orbit{right:-4%;top:39%}
@@ -289,10 +288,6 @@
   padding:8px 9px;
   border-radius:999px;
 }
-.prototype-cta:disabled{
-  opacity:.72;
-  cursor:default;
-}
 
 
 /* MOD-WEB-001 v0.5 — intentional non-client visual studies */
@@ -316,7 +311,7 @@
   pointer-events:none;
 }
 .project-object:after{
-  content:"PROTOTYPE STUDY";
+  content:"MODUM STUDY";
   position:absolute;
   z-index:6;
   right:14px;
