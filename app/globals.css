@@ -1233,3 +1233,50 @@ button:focus-visible{
     margin-top:4px;
   }
 }
+
+
+/* MOD-WEB-001 v1.4 — final CTA contrast + mobile reading size */
+.contact-blob{
+  background:#fffaf8;
+  box-shadow:
+    inset -46px -34px 96px rgba(255,77,0,.14),
+    0 34px 76px rgba(60,63,69,.055);
+}
+.contact-inner h2{
+  color:var(--ink);
+}
+.contact-inner p{
+  color:#4f5055;
+}
+.contact-inner small{
+  color:#67686d;
+}
+.contact-inner .pill-signal{
+  box-shadow:0 10px 24px rgba(255,77,0,.14);
+}
+
+@media(max-width:640px){
+  .services-intro>p,
+  .detail-grid>div>p,
+  .studio-copy p,
+  .contact-inner p{
+    font-size:16px;
+    line-height:1.48;
+  }
+  .service-row p{
+    font-size:14px;
+    line-height:1.5;
+    color:#5d5d61;
+  }
+  .service-row h3{
+    font-size:23px;
+    line-height:1.05;
+  }
+  .project-info p{
+    font-size:13px;
+    line-height:1.35;
+  }
+  .contact-inner small{
+    font-size:10px;
+  }
+}
