@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
-import '@fontsource-variable/instrument-sans';
-import '@fontsource/ibm-plex-mono/400.css';
+import '@fontsource-variable/montserrat';
+import '@fontsource/poppins/400.css';
 import './globals.css';
 
 export const metadata: Metadata = {
