@@ -279,3 +279,17 @@
   .project-2 .project-visual{height:330px}
   .project-3 .project-visual{height:300px}
 }
+
+
+/* MOD-WEB-001 v0.4.1 — honest prototype affordances */
+.project-marker{
+  align-self:flex-start;
+  color:var(--mid);
+  border:1px solid rgba(20,20,18,.15);
+  padding:8px 9px;
+  border-radius:999px;
+}
+.prototype-cta:disabled{
+  opacity:.72;
+  cursor:default;
+}
