@@ -64,8 +64,12 @@ export function HeroStage() {
     <div className="hero-visual-shell">
       {!Scene && (
         <div className="hero-object-fallback" aria-hidden="true">
-          <div className="hero-object-fallback__body" />
-          <div className="hero-object-fallback__signal" />
+          <div className="hero-object-fallback__back" />
+          <div className="hero-object-fallback__seat" />
+          <div className="hero-object-fallback__frame hero-object-fallback__frame-left" />
+          <div className="hero-object-fallback__frame hero-object-fallback__frame-right" />
+          <div className="hero-object-fallback__crossbar" />
+          <div className="hero-object-fallback__joint" />
         </div>
       )}
       {Scene ? <Scene /> : null}
