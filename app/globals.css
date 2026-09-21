@@ -1478,3 +1478,100 @@ button:focus-visible{
     transform:none;
   }
 }
+
+
+/* MOD-WEB-001 v1.5 — product-detail fallback refinement */
+.hero-object-fallback__seat{
+  overflow:visible;
+}
+.hero-object-fallback__seat:before{
+  content:"";
+  position:absolute;
+  left:7%;
+  right:7%;
+  bottom:-7px;
+  height:10px;
+  border-radius:0 0 48% 48% / 0 0 100% 100%;
+  background:linear-gradient(180deg,#bdb6ad,#9f9890);
+  opacity:.56;
+  filter:blur(.1px);
+}
+.hero-object-fallback__seat:after{
+  content:"";
+  position:absolute;
+  left:12%;
+  right:14%;
+  top:18%;
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.74),transparent);
+  transform:rotate(-2deg);
+}
+.hero-object-fallback__back:after{
+  content:"";
+  position:absolute;
+  top:12%;
+  bottom:14%;
+  right:10%;
+  width:1px;
+  background:linear-gradient(180deg,transparent,rgba(255,255,255,.72),rgba(60,63,69,.08),transparent);
+  opacity:.8;
+}
+.hero-object-fallback__frame{
+  width:7px;
+  background:
+    linear-gradient(90deg,#1f2124 0%,#747980 44%,#34373b 72%,#1f2124 100%);
+}
+.hero-object-fallback__frame-left{
+  left:27%;
+  transform:rotate(9deg) skewY(-3deg);
+}
+.hero-object-fallback__frame-right{
+  right:26%;
+  transform:rotate(-6deg) skewY(2deg);
+}
+.hero-object-fallback__crossbar{
+  height:7px;
+  left:30%;
+  width:44%;
+  bottom:9%;
+}
+.hero-object-fallback__joint{
+  right:22%;
+  top:57%;
+  width:16px;
+  height:16px;
+}
+.hero-object-fallback__joint:before{
+  content:"";
+  position:absolute;
+  width:16px;
+  height:16px;
+  border-radius:50%;
+  left:-250%;
+  top:0;
+  background:var(--signal);
+  box-shadow:
+    inset -3px -3px 6px rgba(60,63,69,.12),
+    0 0 0 6px rgba(255,77,0,.045);
+}
+.hero-object-fallback__joint:after{
+  content:"";
+  position:absolute;
+  width:38px;
+  height:2px;
+  left:-12px;
+  top:7px;
+  background:linear-gradient(90deg,rgba(255,77,0,.1),rgba(255,77,0,.66),rgba(255,77,0,0));
+  transform:rotate(-16deg);
+  transform-origin:left center;
+}
+.hero-stage:has(.hero-visual-shell[data-webgl="true"]) .hero-object-fallback,
+.hero-visual-shell[data-webgl="true"] .hero-object-fallback{
+  opacity:0;
+  pointer-events:none;
+}
+@media(max-width:640px){
+  .hero-object-fallback__joint:before{
+    left:-225%;
+  }
+}
