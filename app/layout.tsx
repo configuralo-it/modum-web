@@ -5,17 +5,23 @@ import '@fontsource/poppins/400.css';
 import './globals.css';
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
   title: {
     default: siteConfig.title,
     template: `%s — ${siteConfig.shortName}`,
   },
   description: siteConfig.description,
   applicationName: siteConfig.name,
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     type: 'website',
     siteName: siteConfig.name,
     title: siteConfig.title,
     description: siteConfig.description,
+    url: '/',
+    locale: 'en_US',
   },
   twitter: {
     card: 'summary',
