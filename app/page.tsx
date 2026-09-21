@@ -133,6 +133,7 @@ export default function HomePage() {
       </section>
 
       <section id="contact" className="contact shell">
+        <BrandLogo className="brand-fragment" decorative />
         <div className="contact-blob" aria-hidden="true" />
         <Reveal className="contact-inner">
           <div className="section-kicker"><span>●</span><i/><span>START</span></div>
