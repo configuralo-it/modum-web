@@ -9,11 +9,19 @@ export function Reveal({ children, className = '' }: { children: React.ReactNode
   useEffect(() => {
     const node = ref.current;
     if (!node) return;
+
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('review') === '1') {
+      setVisible(true);
+      return;
+    }
+
     const media = window.matchMedia('(prefers-reduced-motion: reduce)');
     if (media.matches) {
       setVisible(true);
       return;
     }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -23,6 +31,7 @@ export function Reveal({ children, className = '' }: { children: React.ReactNode
       },
       { threshold: 0.14 },
     );
+
     observer.observe(node);
     return () => observer.disconnect();
   }, []);
