@@ -49,7 +49,7 @@ export default function HomePage() {
         </nav>
 
         <details className="v2-mobile-menu">
-          <summary aria-label="Open navigation">Menu <i>/</i></summary>
+          <summary>Menu <i>/</i></summary>
           <div>
             <a href="#work">Work</a>
             <a href="#services">What we make</a>
@@ -101,7 +101,7 @@ export default function HomePage() {
       <section id="work" className="v2-work v2-shell">
         <div className="v2-section-head">
           <span className="v2-label">01 / SELECTED WORK</span>
-          <p>Until publishable client work is verified, these are explicitly Modum Studio Studies.</p>
+          <p>Three Modum Studio Studies exploring how product value can become image, information and interaction.</p>
         </div>
 
         <div className="v2-work-grid">
