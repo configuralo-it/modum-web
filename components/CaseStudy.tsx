@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import type { ProjectRecord } from '@/lib/projects';
 import { BrandLogo } from '@/components/BrandLogo';
+import { siteConfig } from '@/lib/site';
 
 export function CaseStudy({ project }: { project: ProjectRecord }) {
   return (
@@ -50,7 +51,7 @@ export function CaseStudy({ project }: { project: ProjectRecord }) {
 
       <footer className="case-study-footer shell">
         <BrandLogo className="brand-logo brand-logo-footer" decorative />
-        <a href="mailto:parliamo@modumstudio.it">Start a conversation <span>↗</span></a>
+        <a href={`mailto:${siteConfig.email}`}>Start a conversation <span>↗</span></a>
       </footer>
     </main>
   );
