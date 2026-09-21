@@ -14,6 +14,30 @@ const services = [
   ['06','AI Strategy & Automation','Technology when it has a job: consistency, speed, quality and more efficient processes.'],
 ];
 
+const mobileMenuScript = String.raw`
+(() => {
+  const script = document.currentScript;
+  const menu = script?.previousElementSibling;
+  if (!(menu instanceof HTMLDetailsElement)) return;
+
+  const close = () => menu.removeAttribute('open');
+
+  menu.addEventListener('click', (event) => {
+    const target = event.target;
+    if (target instanceof HTMLAnchorElement) close();
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') close();
+  });
+
+  document.addEventListener('pointerdown', (event) => {
+    if (!menu.open || menu.contains(event.target)) return;
+    close();
+  }, { passive: true });
+})();
+`;
+
 const projects = [
   ['01','Material study','Product form / 3D · Modum study'],
   ['02','Editorial study','Catalog system · Modum study'],
@@ -43,6 +67,7 @@ export default function HomePage() {
             <a href="#contact">Let's talk</a>
           </div>
         </details>
+        <script dangerouslySetInnerHTML={{ __html: mobileMenuScript }} />
       </header>
 
       <section id="top" className="hero shell">
