@@ -16,21 +16,21 @@ export type MaterialRecord = {
 export const materials: MaterialRecord[] = [
   {
     id: 'oak',
-    src: 'studies/material-oak.jpg',
+    src: 'studies/material-oak.webp',
     name: 'Oak',
     detail: 'Plank surface',
     alt: 'Light oak wood plank surface, close up',
   },
   {
     id: 'textile',
-    src: 'studies/material-textile.jpg',
+    src: 'studies/material-textile.webp',
     name: 'Textile',
     detail: 'Grey weave',
     alt: 'Grey woven upholstery textile, close up',
   },
   {
     id: 'steel',
-    src: 'studies/material-steel.jpg',
+    src: 'studies/material-steel.webp',
     name: 'Steel',
     detail: 'Brushed finish',
     alt: 'Brushed steel surface with directional finish',

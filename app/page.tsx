@@ -82,11 +82,12 @@ export default function HomePage() {
 
           <figure className="v3-hero-object">
             <img
-              src="studies/object-chair.jpg"
+              src="studies/object-chair.webp"
               alt="Chair photographed in studio light"
               width={1400}
               height={933}
               decoding="async"
+              fetchPriority="high"
             />
             <figcaption className="mono">
               <span>Object</span>
@@ -115,7 +116,7 @@ export default function HomePage() {
       <div className="v3-band shell" role="group" aria-label="Material studies, photographed">
         {materials.map((m) => (
           <figure key={m.id} className="v3-band-cell">
-            <img src={m.src} alt={m.alt} width={1200} height={800} decoding="async" className={`v3-mat-${m.id}`} />
+            <img src={m.src} alt={m.alt} width={1200} height={800} loading="lazy" decoding="async" className={`v3-mat-${m.id}`} />
             <figcaption className="mono">
               <span>{m.name}</span>
               <span>{m.detail}</span>
@@ -253,7 +254,7 @@ export default function HomePage() {
 
             <figure className="v3-approach-object">
               <img
-                src="studies/object-armchair.jpg"
+                src="studies/object-armchair.webp"
                 alt="Armchair with fabric cushions and leather shell on a dark ground"
                 width={1400}
                 height={787}

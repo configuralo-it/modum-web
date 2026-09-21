@@ -21,11 +21,11 @@ All photographs are published on Unsplash under the Unsplash License
 
 | File | Subject | Source page | Photographer |
 |---|---|---|---|
-| `public/studies/material-oak.jpg` | Light oak plank surface | https://unsplash.com/photos/light-oak-wood-plank-texture-background-JH_R66BihvA | simon |
-| `public/studies/material-textile.jpg` | Grey woven textile, close up | https://unsplash.com/photos/a-close-up-of-a-gray-fabric-texture-SWy0WAO12P8 | engin akyurt |
-| `public/studies/material-steel.jpg` | Brushed steel, cross-directional finish | https://unsplash.com/photos/brushed-silver-metal-texture-with-horizontal-lines-u9enPDMCAVY | Logan Voss |
-| `public/studies/object-chair.jpg` | Chair, studio light | https://unsplash.com/photos/white-metal-chair-bxLhqZIp2LI | Ellen Qin |
-| `public/studies/object-armchair.jpg` | Armchair on dark ground | https://unsplash.com/photos/a-modern-orange-armchair-on-a-dark-background-WjCNfeMdtu0 | Bhautik Patel |
+| `public/studies/material-oak.webp` | Light oak plank surface | https://unsplash.com/photos/light-oak-wood-plank-texture-background-JH_R66BihvA | simon |
+| `public/studies/material-textile.webp` | Grey woven textile, close up | https://unsplash.com/photos/a-close-up-of-a-gray-fabric-texture-SWy0WAO12P8 | engin akyurt |
+| `public/studies/material-steel.webp` | Brushed steel, cross-directional finish | https://unsplash.com/photos/brushed-silver-metal-texture-with-horizontal-lines-u9enPDMCAVY | Logan Voss |
+| `public/studies/object-chair.webp` | Chair, studio light | https://unsplash.com/photos/white-metal-chair-bxLhqZIp2LI | Ellen Qin |
+| `public/studies/object-armchair.webp` | Armchair on dark ground | https://unsplash.com/photos/a-modern-orange-armchair-on-a-dark-background-WjCNfeMdtu0 | Bhautik Patel |
 
 Usage rule: these images are presented as **material studies** (what the photo actually
 shows), never as client work or products made by the studio. Captions state only facts
