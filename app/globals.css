@@ -658,3 +658,24 @@ h1,h2,h3,
     opacity:.028;
   }
 }
+
+
+/* MOD-WEB-001 v0.9 — honest studies + founder signature */
+.studio-names{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:30px;
+  padding-top:18px;
+  border-top:1px solid rgba(60,63,69,.16);
+  font-family:'Montserrat Variable',Arial,sans-serif;
+  font-size:12px;
+  line-height:1;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.studio-names i{
+  color:var(--signal);
+  font-style:normal;
+}
