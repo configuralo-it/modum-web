@@ -29,7 +29,17 @@ export default function HomePage() {
           <a href="#approach">Approach</a>
           <a href="#studio">Studio</a>
         </nav>
-        <a className="pill pill-dark" href="#contact">Let's talk <span>/</span></a>
+        <a className="pill pill-dark desktop-contact" href="#contact">Let's talk <span>/</span></a>
+        <details className="mobile-menu">
+          <summary aria-label="Open navigation"><span>Menu</span><i>/</i></summary>
+          <div className="mobile-menu-panel">
+            <a href="#work">Work</a>
+            <a href="#services">Services</a>
+            <a href="#approach">Approach</a>
+            <a href="#studio">Studio</a>
+            <a href="#contact">Let's talk</a>
+          </div>
+        </details>
       </header>
 
       <section id="top" className="hero shell">
