@@ -10,13 +10,13 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@fontsource/ibm-plex-mono": "^5.2.5",
-    "@fontsource-variable/instrument-sans": "^5.2.5",
     "@react-three/fiber": "9.7.0",
     "next": "^15.2.4",
     "react": "19.2.0",
     "react-dom": "19.2.0",
-    "three": "^0.175.0"
+    "three": "^0.175.0",
+    "@fontsource-variable/montserrat": "^5.2.5",
+    "@fontsource/poppins": "^5.2.5"
   },
   "devDependencies": {
     "@types/node": "^22.13.10",
