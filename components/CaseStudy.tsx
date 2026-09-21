@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import type { ProjectRecord } from '@/lib/projects';
 import { BrandLogo } from '@/components/BrandLogo';
 
@@ -5,10 +6,10 @@ export function CaseStudy({ project }: { project: ProjectRecord }) {
   return (
     <main className="case-study">
       <header className="case-study-header shell">
-        <a className="brand-link" href="/" aria-label="Modum Studio home">
+        <Link className="brand-link" href="/" aria-label="Modum Studio home">
           <BrandLogo className="brand-logo brand-logo-header" />
-        </a>
-        <a className="text-link" href="/#work">Back to work <span>↗</span></a>
+        </Link>
+        <Link className="text-link" href="/#work">Back to work <span>↗</span></Link>
       </header>
 
       <section className="case-study-hero shell">
