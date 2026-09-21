@@ -126,19 +126,19 @@ jobs:
         env:
           PAGE_URL: ${{ needs.deploy.outputs.page_url }}
         run: |
-          npx --yes playwright@1.55.0 screenshot             --browser chromium             --viewport-size "1440,1000"             --full-page             "$PAGE_URL"             review/latest-desktop.png
+          npx --yes playwright@1.55.0 screenshot             --browser chromium             --viewport-size "1440,1000"             --full-page             "$PAGE_URL?review=1"             review/latest-desktop.png
 
-          npx --yes playwright@1.55.0 screenshot             --browser chromium             --viewport-size "390,844"             --full-page             "$PAGE_URL"             review/latest-mobile.png
+          npx --yes playwright@1.55.0 screenshot             --browser chromium             --viewport-size "390,844"             --full-page             "$PAGE_URL?review=1"             review/latest-mobile.png
 
-          npx --yes playwright@1.55.0 screenshot             --browser chromium             --viewport-size "480,333"             "$PAGE_URL"             review/hero-desktop.jpeg
+          npx --yes playwright@1.55.0 screenshot             --browser chromium             --viewport-size "1440,900"             "$PAGE_URL?review=1"             review/hero-desktop.jpeg
 
-          npx --yes playwright@1.55.0 screenshot             --browser chromium             --viewport-size "240,520"             "$PAGE_URL"             review/hero-mobile.jpeg
+          npx --yes playwright@1.55.0 screenshot             --browser chromium             --viewport-size "390,844"             "$PAGE_URL?review=1"             review/hero-mobile.jpeg
 
-          npx --yes playwright@1.55.0 screenshot             --browser chromium             --viewport-size "960,640"             "$PAGE_URL#work"             review/work-desktop.jpeg
+          npx --yes playwright@1.55.0 screenshot             --browser chromium             --viewport-size "1440,900"             "$PAGE_URL?review=1#work"             review/work-desktop.jpeg
 
-          npx --yes playwright@1.55.0 screenshot             --browser chromium             --viewport-size "960,640"             "$PAGE_URL#approach"             review/approach-desktop.jpeg
+          npx --yes playwright@1.55.0 screenshot             --browser chromium             --viewport-size "1440,900"             "$PAGE_URL?review=1#approach"             review/approach-desktop.jpeg
 
-          npx --yes playwright@1.55.0 screenshot             --browser chromium             --viewport-size "960,640"             "$PAGE_URL#contact"             review/contact-desktop.jpeg
+          npx --yes playwright@1.55.0 screenshot             --browser chromium             --viewport-size "1440,900"             "$PAGE_URL?review=1#contact"             review/contact-desktop.jpeg
 
       - name: Upload review evidence
         uses: actions/upload-artifact@v4
