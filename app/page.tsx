@@ -60,8 +60,8 @@ export default function HomePage() {
 
       <section id="work" className="work section shell">
         <Reveal>
-          <div className="section-kicker"><span>/</span><i/><span>SELECTED WORK</span><b>REAL ASSETS PENDING</b></div>
-          <h2 className="sr-only">Selected work studies</h2>
+          <div className="section-kicker"><span>/</span><i/><span>STUDIO STUDIES</span><b>PORTFOLIO / NEXT</b></div>
+          <h2 className="sr-only">Modum Studio studies</h2>
           <div className="project-grid">
             {projects.map(([n,title,meta], idx) => (
               <article className={`project project-${idx+1}`} key={n}>
@@ -130,7 +130,7 @@ export default function HomePage() {
         <BrandLogo className="studio-brand-fragment" decorative />
         <Reveal className="studio-grid">
           <div><div className="section-kicker"><span>/</span><i/><span>STUDIO</span></div><h2>Serious about the work.<br/>Curious about everything.</h2></div>
-          <div className="studio-copy"><p>Modum is a creative and digital studio built around product understanding, visual craft and technical capability.</p><p>Two cofounders, distributed responsibilities, one shared standard: make it clear, intentional and worth choosing.</p></div>
+          <div className="studio-copy"><p>Modum is a creative and digital studio built around product understanding, visual craft and technical capability.</p><p>Two cofounders, distributed responsibilities, one shared standard: make it clear, intentional and worth choosing.</p><div className="studio-names"><span>Giada Rossetti</span><i>/</i><span>Alberto G. Ferrario</span></div></div>
         </Reveal>
       </section>
 
