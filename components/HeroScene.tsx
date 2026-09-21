@@ -1,6 +1,6 @@
 'use client';
 
-import { Canvas, useFrame } from '@react-three/fiber';
+import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import * as THREE from 'three';
 import { useEffect, useMemo, useRef, useState } from 'react';
 
@@ -14,6 +14,35 @@ function useReducedMotion() {
     return () => media.removeEventListener('change', sync);
   }, []);
   return reduced;
+}
+
+function FrameTicker({ reduced }: { reduced: boolean }) {
+  const invalidate = useThree((state) => state.invalidate);
+
+  useEffect(() => {
+    if (reduced) {
+      invalidate();
+      return;
+    }
+
+    const tick = () => {
+      if (!document.hidden) invalidate();
+    };
+
+    tick();
+    const id = window.setInterval(tick, 1000 / 24);
+    const onVisibility = () => {
+      if (!document.hidden) invalidate();
+    };
+    document.addEventListener('visibilitychange', onVisibility);
+
+    return () => {
+      window.clearInterval(id);
+      document.removeEventListener('visibilitychange', onVisibility);
+    };
+  }, [invalidate, reduced]);
+
+  return null;
 }
 
 function ProductObject({ reduced }: { reduced: boolean }) {
@@ -38,11 +67,11 @@ function ProductObject({ reduced }: { reduced: boolean }) {
     const geo = new THREE.ExtrudeGeometry(shape, {
       depth: 0.7,
       bevelEnabled: true,
-      bevelSegments: 10,
+      bevelSegments: 5,
       steps: 1,
       bevelSize: 0.16,
       bevelThickness: 0.18,
-      curveSegments: 48,
+      curveSegments: 30,
     });
     geo.center();
     geo.computeVertexNormals();
@@ -52,29 +81,29 @@ function ProductObject({ reduced }: { reduced: boolean }) {
   useFrame((state) => {
     if (!group.current || reduced) return;
     const t = state.clock.elapsedTime;
-    const targetX = state.pointer.y * 0.09 - 0.12 + Math.sin(t * 0.35) * 0.018;
-    const targetY = state.pointer.x * 0.11 + t * 0.035;
-    group.current.rotation.x = THREE.MathUtils.lerp(group.current.rotation.x, targetX, 0.04);
-    group.current.rotation.y = THREE.MathUtils.lerp(group.current.rotation.y, targetY, 0.035);
-    group.current.rotation.z = THREE.MathUtils.lerp(group.current.rotation.z, 0.18 + state.pointer.x * 0.04, 0.035);
-    group.current.position.y = Math.sin(t * 0.42) * 0.035;
+    const targetX = state.pointer.y * 0.08 - 0.12 + Math.sin(t * 0.35) * 0.014;
+    const targetY = state.pointer.x * 0.1 + t * 0.03;
+    group.current.rotation.x = THREE.MathUtils.lerp(group.current.rotation.x, targetX, 0.08);
+    group.current.rotation.y = THREE.MathUtils.lerp(group.current.rotation.y, targetY, 0.07);
+    group.current.rotation.z = THREE.MathUtils.lerp(group.current.rotation.z, 0.18 + state.pointer.x * 0.035, 0.07);
+    group.current.position.y = Math.sin(t * 0.42) * 0.028;
   });
 
   return (
     <group ref={group} rotation={[-0.12, 0.35, 0.18]} scale={0.86}>
-      <mesh geometry={geometry} castShadow receiveShadow>
+      <mesh geometry={geometry}>
         <meshPhysicalMaterial
           color="#d8d2c9"
-          roughness={0.32}
-          metalness={0.18}
-          clearcoat={0.72}
-          clearcoatRoughness={0.28}
-          envMapIntensity={0.8}
+          roughness={0.35}
+          metalness={0.16}
+          clearcoat={0.55}
+          clearcoatRoughness={0.32}
+          envMapIntensity={0.7}
         />
       </mesh>
       <mesh position={[0.35, -0.05, 0.43]} rotation={[Math.PI / 2, 0.16, 0.2]}>
-        <torusGeometry args={[0.72, 0.045, 18, 96, Math.PI * 1.42]} />
-        <meshStandardMaterial color="#ff4d00" emissive="#ff4d00" emissiveIntensity={0.42} roughness={0.38} />
+        <torusGeometry args={[0.72, 0.045, 12, 64, Math.PI * 1.42]} />
+        <meshStandardMaterial color="#ff4d00" emissive="#ff4d00" emissiveIntensity={0.28} roughness={0.42} />
       </mesh>
     </group>
   );
@@ -82,17 +111,20 @@ function ProductObject({ reduced }: { reduced: boolean }) {
 
 export function HeroScene() {
   const reduced = useReducedMotion();
+
   return (
     <div className="hero-canvas" aria-hidden="true">
       <Canvas
-        dpr={[1, 1.5]}
+        frameloop="demand"
+        dpr={[1, 1.2]}
         camera={{ position: [0, 0.15, 6.4], fov: 31 }}
-        gl={{ antialias: true, alpha: true, powerPreference: 'high-performance' }}
+        gl={{ antialias: true, alpha: true, powerPreference: 'low-power' }}
       >
-        <ambientLight intensity={1.35} />
-        <directionalLight position={[-4, 5, 6]} intensity={3.2} color="#fff8ee" />
-        <directionalLight position={[5, -1, 4]} intensity={1.8} color="#dfe7ff" />
-        <pointLight position={[1.8, -1.3, 3]} intensity={5} color="#ff4d00" distance={5.5} />
+        <ambientLight intensity={1.2} />
+        <directionalLight position={[-4, 5, 6]} intensity={2.7} color="#fff8ee" />
+        <directionalLight position={[5, -1, 4]} intensity={1.45} color="#dfe7ff" />
+        <pointLight position={[1.8, -1.3, 3]} intensity={3.6} color="#ff4d00" distance={5.5} />
+        <FrameTicker reduced={reduced} />
         <ProductObject reduced={reduced} />
       </Canvas>
     </div>
