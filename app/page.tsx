@@ -1,6 +1,7 @@
 import { HeroStage } from '@/components/HeroStage';
 import { Reveal } from '@/components/Reveal';
 import { DistortedLens } from '@/components/DistortedLens';
+import { BrandLogo } from '@/components/BrandLogo';
 
 const services = [
   ['01','3D Rendering','Photorealism, material, light and detail that make the product credible before a camera is involved.'],
@@ -21,7 +22,7 @@ export default function HomePage() {
   return (
     <main>
       <header className="site-header shell">
-        <a className="brand" href="#top" aria-label="Modum Studio home">Modum</a>
+        <a className="brand brand-link" href="#top" aria-label="Modum Studio home"><BrandLogo className="brand-logo brand-logo-header" /></a>
         <nav aria-label="Primary navigation">
           <a href="#work">Work</a>
           <a href="#services">Services</a>
@@ -142,7 +143,7 @@ export default function HomePage() {
         </Reveal>
       </section>
 
-      <footer className="shell footer"><span className="brand">Modum</span><span className="mono">Creative studio for real products</span><span className="mono">© 2026</span></footer>
+      <footer className="shell footer"><BrandLogo className="brand-logo brand-logo-footer" decorative /><span className="mono">Creative studio for real products</span><span className="mono">© 2026</span></footer>
     </main>
   );
 }
