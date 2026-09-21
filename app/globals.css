@@ -1087,3 +1087,96 @@ button:focus-visible{
     animation:none!important;
   }
 }
+
+
+/* MOD-WEB-001 v1.2 — product-consistent pre-WebGL fallback */
+.hero-object-fallback{
+  left:52%;
+  top:51%;
+  width:min(64%,560px);
+  aspect-ratio:1.18;
+  transform:translate(-46%,-48%) rotate(-6deg);
+  filter:drop-shadow(0 26px 46px rgba(60,63,69,.09));
+}
+.hero-object-fallback__body,
+.hero-object-fallback__signal{
+  display:none;
+}
+.hero-object-fallback__seat,
+.hero-object-fallback__back{
+  position:absolute;
+  z-index:3;
+  background:linear-gradient(145deg,#eee9e2 0%,#d8d2c9 54%,#bfb8af 100%);
+  border:1px solid rgba(60,63,69,.08);
+  box-shadow:
+    inset -18px -14px 34px rgba(60,63,69,.08),
+    inset 12px 10px 28px rgba(255,255,255,.5);
+}
+.hero-object-fallback__seat{
+  width:63%;
+  height:25%;
+  left:18%;
+  top:49%;
+  border-radius:18% 20% 17% 19% / 42% 38% 46% 42%;
+  transform:perspective(420px) rotateX(59deg) rotateZ(-1deg);
+}
+.hero-object-fallback__back{
+  width:58%;
+  height:47%;
+  left:20%;
+  top:8%;
+  border-radius:17% 19% 15% 18% / 16% 18% 20% 18%;
+  transform:perspective(420px) rotateY(-6deg) rotateX(-6deg);
+  transform-origin:50% 100%;
+}
+.hero-object-fallback__frame{
+  position:absolute;
+  z-index:2;
+  width:6px;
+  height:59%;
+  top:40%;
+  border-radius:999px;
+  background:linear-gradient(90deg,#25272a,#62666c 48%,#303237);
+  box-shadow:0 0 0 1px rgba(60,63,69,.08);
+  transform-origin:50% 0;
+}
+.hero-object-fallback__frame-left{
+  left:28%;
+  transform:rotate(11deg);
+}
+.hero-object-fallback__frame-right{
+  right:27%;
+  transform:rotate(-7deg);
+}
+.hero-object-fallback__crossbar{
+  position:absolute;
+  z-index:2;
+  width:42%;
+  height:6px;
+  left:31%;
+  bottom:10%;
+  border-radius:999px;
+  background:linear-gradient(#62666c,#2e3034);
+  transform:rotate(-2deg);
+}
+.hero-object-fallback__joint{
+  position:absolute;
+  z-index:5;
+  width:17px;
+  height:17px;
+  right:23%;
+  top:58%;
+  border-radius:50%;
+  background:var(--signal);
+  box-shadow:
+    inset -3px -3px 6px rgba(60,63,69,.12),
+    0 0 0 6px rgba(255,77,0,.06);
+}
+@media(max-width:640px){
+  .hero-object-fallback{
+    width:86%;
+    left:51%;
+    top:50%;
+    transform:translate(-48%,-48%) rotate(-6deg);
+  }
+}
