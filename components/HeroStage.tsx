@@ -9,30 +9,34 @@ export function HeroStage() {
 
   useEffect(() => {
     let cancelled = false;
-    let timer: ReturnType<typeof setTimeout> | undefined;
-    let idleId: number | undefined;
+    let loading = false;
 
     const load = async () => {
+      if (loading || cancelled) return;
+      loading = true;
+
       const mod = (await import('./HeroScene')) as SceneModule;
       if (!cancelled) setScene(() => mod.HeroScene);
     };
 
-    const schedule = () => {
-      if ('requestIdleCallback' in window) {
-        idleId = window.requestIdleCallback(load, { timeout: 1400 });
-      } else {
-        timer = setTimeout(load, 650);
-      }
+    const onIntent = () => {
+      void load();
     };
 
-    timer = setTimeout(schedule, 180);
+    const timeout = window.setTimeout(load, 6500);
+
+    window.addEventListener('pointermove', onIntent, { passive: true, once: true });
+    window.addEventListener('touchstart', onIntent, { passive: true, once: true });
+    window.addEventListener('scroll', onIntent, { passive: true, once: true });
+    window.addEventListener('keydown', onIntent, { once: true });
 
     return () => {
       cancelled = true;
-      if (timer) clearTimeout(timer);
-      if (idleId !== undefined && 'cancelIdleCallback' in window) {
-        window.cancelIdleCallback(idleId);
-      }
+      window.clearTimeout(timeout);
+      window.removeEventListener('pointermove', onIntent);
+      window.removeEventListener('touchstart', onIntent);
+      window.removeEventListener('scroll', onIntent);
+      window.removeEventListener('keydown', onIntent);
     };
   }, []);
 
