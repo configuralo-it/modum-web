@@ -293,3 +293,194 @@
   opacity:.72;
   cursor:default;
 }
+
+
+/* MOD-WEB-001 v0.5 — intentional non-client visual studies */
+.project-visual{
+  background:#cbc7be;
+  isolation:isolate;
+}
+.project-object{
+  position:absolute;
+  inset:0;
+  overflow:hidden;
+  transition:transform .55s cubic-bezier(.2,.72,.2,1);
+}
+.project:hover .project-object{
+  transform:scale(1.012);
+}
+.project-object .study-shape,
+.project-object .study-detail{
+  position:absolute;
+  display:block;
+  pointer-events:none;
+}
+.project-object:after{
+  content:"PROTOTYPE STUDY";
+  position:absolute;
+  z-index:6;
+  right:14px;
+  bottom:14px;
+  padding:7px 9px;
+  background:rgba(241,240,234,.9);
+  color:var(--ink);
+  border:1px solid rgba(20,20,18,.08);
+  font:9px 'IBM Plex Mono';
+  letter-spacing:.08em;
+}
+
+/* 01 — material / product form */
+.project-1 .project-object{
+  background:
+    radial-gradient(circle at 78% 16%,rgba(255,255,255,.42),transparent 27%),
+    linear-gradient(145deg,#b9b1a5 0%,#ddd7ce 51%,#8d887f 100%);
+}
+.project-1 .study-shape{
+  left:12%;
+  top:15%;
+  width:73%;
+  height:66%;
+  border-radius:43% 57% 38% 62% / 59% 32% 68% 41%;
+  background:
+    radial-gradient(circle at 27% 18%,rgba(255,255,255,.78),transparent 31%),
+    linear-gradient(145deg,#eee9e0,#bcb4a8 56%,#969087);
+  border:1px solid rgba(20,20,18,.13);
+  box-shadow:
+    inset -46px -36px 90px rgba(20,20,18,.17),
+    inset 25px 20px 60px rgba(255,255,255,.54),
+    0 38px 70px rgba(20,20,18,.17);
+  transform:rotate(-8deg);
+}
+.project-1 .study-shape:after{
+  content:"";
+  position:absolute;
+  left:27%;
+  top:26%;
+  width:47%;
+  height:39%;
+  border-radius:50%;
+  background:#cbc5bb;
+  border:1px solid rgba(20,20,18,.08);
+  box-shadow:inset 16px 13px 36px rgba(20,20,18,.12);
+}
+.project-1 .study-detail{
+  right:12%;
+  top:51%;
+  width:38%;
+  height:7px;
+  border-radius:999px;
+  background:var(--signal);
+  box-shadow:0 0 20px rgba(255,77,0,.24);
+  transform:rotate(-8deg);
+}
+.project-1 .project-object:after{content:"MATERIAL STUDY / PLACEHOLDER"}
+
+/* 02 — editorial / catalog */
+.project-2 .project-object{
+  background:
+    repeating-linear-gradient(90deg,rgba(20,20,18,.055) 0 1px,transparent 1px calc(25% - 1px)),
+    linear-gradient(#e8e5dd,#d8d4cb);
+}
+.project-2 .study-shape{
+  left:11%;
+  top:12%;
+  width:56%;
+  height:72%;
+  background:#181816;
+  box-shadow:18px 18px 0 rgba(241,240,234,.72);
+}
+.project-2 .study-shape:before{
+  content:"FORM / 02";
+  position:absolute;
+  left:16px;
+  top:15px;
+  color:#f1f0ea;
+  font:9px 'IBM Plex Mono';
+  letter-spacing:.08em;
+}
+.project-2 .study-shape:after{
+  content:"";
+  position:absolute;
+  left:15%;
+  right:15%;
+  bottom:15%;
+  height:41%;
+  background:
+    linear-gradient(var(--signal),var(--signal)) left top / 32% 4px no-repeat,
+    repeating-linear-gradient(180deg,rgba(241,240,234,.56) 0 1px,transparent 1px 17px);
+}
+.project-2 .study-detail{
+  right:10%;
+  top:22%;
+  width:18%;
+  height:18%;
+  background:var(--signal);
+}
+.project-2 .study-detail:after{
+  content:"";
+  position:absolute;
+  top:calc(100% + 18px);
+  right:0;
+  width:150%;
+  height:70px;
+  border-top:1px solid rgba(20,20,18,.3);
+  border-bottom:1px solid rgba(20,20,18,.3);
+}
+.project-2 .project-object:after{content:"EDITORIAL STUDY / PLACEHOLDER"}
+
+/* 03 — product configurator / digital instrument */
+.project-3 .project-object{
+  background:
+    linear-gradient(rgba(241,240,234,.07) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(241,240,234,.07) 1px,transparent 1px),
+    radial-gradient(circle at 33% 52%,#777 0%,#30302e 25%,#171715 56%,#0c0c0b 100%);
+  background-size:28px 28px,28px 28px,auto;
+}
+.project-3 .study-shape{
+  left:10%;
+  top:18%;
+  width:54%;
+  height:64%;
+  border:1px solid rgba(241,240,234,.3);
+  border-radius:50%;
+}
+.project-3 .study-shape:before,
+.project-3 .study-shape:after{
+  content:"";
+  position:absolute;
+  border-radius:50%;
+  inset:15%;
+  border:1px dashed rgba(241,240,234,.24);
+}
+.project-3 .study-shape:after{
+  inset:34%;
+  background:linear-gradient(145deg,#cac4ba,#75716b);
+  border:1px solid rgba(255,255,255,.28);
+  box-shadow:inset -10px -10px 24px rgba(0,0,0,.24);
+}
+.project-3 .study-detail{
+  right:8%;
+  top:16%;
+  width:24%;
+  height:67%;
+  border-left:1px solid rgba(241,240,234,.2);
+  background:
+    radial-gradient(circle at 50% 15%,var(--signal) 0 5px,transparent 6px),
+    repeating-linear-gradient(180deg,transparent 0 31px,rgba(241,240,234,.22) 31px 32px);
+}
+.project-3 .project-object:after{
+  content:"CONFIGURATOR STUDY / PLACEHOLDER";
+  background:rgba(20,20,18,.74);
+  color:#f1f0ea;
+  border-color:rgba(241,240,234,.14);
+}
+.project-mark{
+  display:grid;
+  place-items:center;
+  width:38px;
+  height:38px;
+  border:1px solid rgba(20,20,18,.25);
+  border-radius:50%;
+  font-size:18px;
+  line-height:1;
+}
