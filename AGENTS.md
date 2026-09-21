@@ -193,3 +193,15 @@ At any viewport:
 - one major high-cost visual system maximum;
 - secondary effects should be CSS/SVG/lightweight;
 - do not stack hero WebGL + particle simulation + glass shader + text shader simultaneously.
+
+
+## DEC-006 — Proprietary Modum Typeface
+
+Modum Studio will develop its own proprietary typeface.
+
+Until that typeface exists:
+- Instrument Sans is a prototype-only placeholder;
+- IBM Plex Mono remains a temporary technical/annotation font;
+- do not treat either font as final brand identity;
+- layout and component choices should avoid becoming dependent on quirks of the temporary fonts;
+- keep typography integration modular so the Modum typeface can replace the prototype fonts cleanly later.
