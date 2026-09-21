@@ -31,16 +31,23 @@ Internal principles:
 - Curiosity asks. Conviction decides. Taste edits. Commerce tests. Craft proves.
 
 ## Working visual system
-Prototype values:
-- Instrument Sans Variable
-- IBM Plex Mono for technical metadata / annotations only
-- #141412
-- #F1F0EA
-- #D7D6D0
-- #8E8D87
-- Signal Orange #FF4D00
+Verified identity bridge:
+- Montserrat Variable — headings, structural UI, labels and technical metadata.
+- Poppins Regular — body copy and descriptive text.
+- Warm Paper #FFF7F4.
+- Charcoal #3C3F45.
+- Signal Orange #FF4D00.
+- Existing Modum wordmark/glyph fragments may be used as controlled structural devices.
 
-These are not final production approval until tested with real portfolio assets.
+DEC-006 remains in force: Modum will develop its own proprietary typeface.
+Montserrat + Poppins are a transitional bridge derived from the existing identity assets, not the final type system.
+
+Visual identity source:
+- Existing Modum brand assets are the historical DNA to evolve from.
+- Do not introduce an unrelated visual language when an existing Modum element can do the job.
+- Motion, 3D, technical annotations and signal orange must evolve this identity rather than replace it.
+
+These values remain subject to validation against real portfolio assets before final production approval.
 
 ## Homepage behavior
 
@@ -200,8 +207,20 @@ At any viewport:
 Modum Studio will develop its own proprietary typeface.
 
 Until that typeface exists:
-- Instrument Sans is a prototype-only placeholder;
-- IBM Plex Mono remains a temporary technical/annotation font;
-- do not treat either font as final brand identity;
-- layout and component choices should avoid becoming dependent on quirks of the temporary fonts;
-- keep typography integration modular so the Modum typeface can replace the prototype fonts cleanly later.
+- Montserrat + Poppins are the approved transitional bridge because they are verified in the existing Modum identity assets;
+- do not treat either font as the final brand identity;
+- layout and component choices should avoid becoming dependent on quirks of the transitional fonts;
+- keep typography integration modular so the proprietary Modum typeface can replace them cleanly later.
+
+## DEC-007 — Existing identity assets as evolution source
+
+Existing Modum assets are the historical/visual DNA for the digital identity.
+Verified cues include:
+- warm paper / charcoal palette;
+- strong custom wordmark;
+- wide tracking;
+- slash separators;
+- generous negative space;
+- oversized/cropped wordmark or glyph fragments.
+
+Newer layers — signal orange, motion, 3D, morphing surfaces and technical annotations — must feel like an evolution of this DNA, not a parallel style.
