@@ -82,7 +82,7 @@ export default function HomePage() {
                     <i className="study-detail" />
                   </div>
                 </div>
-                <div className="project-info"><div><h3>{title}</h3><p>{meta}</p></div><span className="project-marker mono" aria-hidden="true">PENDING</span></div>
+                <div className="project-info"><div><h3>{title}</h3><p>{meta}</p></div><span className="project-marker mono" aria-hidden="true">STUDY</span></div>
               </article>
             ))}
           </div>
