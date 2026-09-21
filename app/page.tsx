@@ -1,4 +1,5 @@
 import { BrandLogo } from '@/components/BrandLogo';
+import { ProductStudy } from '@/components/ProductStudy';
 import { siteConfig } from '@/lib/site';
 
 const services = [
@@ -77,13 +78,7 @@ export default function HomePage() {
           </div>
 
           <div className="v2-product-plate" aria-label="Modum Product Study 01">
-            <div className="v2-product-object" aria-hidden="true">
-              <span className="v2-product-shell" />
-              <span className="v2-product-leg v2-product-leg-a" />
-              <span className="v2-product-leg v2-product-leg-b" />
-              <span className="v2-product-joint v2-product-joint-a" />
-              <span className="v2-product-joint v2-product-joint-b" />
-            </div>
+            <ProductStudy variant="hero" className="v2-product-art" />
             <div className="v2-product-caption">
               <span>MODUM PRODUCT STUDY / 01</span>
               <span>FORM / MATERIAL / CONSTRUCTION</span>
@@ -106,10 +101,8 @@ export default function HomePage() {
 
         <div className="v2-work-grid">
           <article className="v2-work-main">
-            <div className="v2-study-image v2-study-product" aria-hidden="true">
-              <span className="v2-study-product-shell" />
-              <span className="v2-study-product-frame" />
-              <span className="v2-study-product-accent" />
+            <div className="v2-study-image v2-study-product">
+              <ProductStudy variant="detail" className="v2-study-product-art" />
             </div>
             <div className="v2-work-meta">
               <div><span>01</span><h2>Product / Material Study</h2></div>
@@ -174,16 +167,8 @@ export default function HomePage() {
               <p>It is material, proportion, joints, finish, context, variants, photography, information and the way a customer eventually makes a choice.</p>
             </div>
 
-            <div className="v2-exploded" aria-label="Product construction study">
-              <span className="v2-ex-shell">Shell</span>
-              <span className="v2-ex-frame">Frame</span>
-              <span className="v2-ex-joint">Joint</span>
-              <span className="v2-ex-detail">Detail</span>
-              <div className="v2-exploded-shell" />
-              <div className="v2-exploded-frame" />
-              <div className="v2-exploded-bar" />
-              <div className="v2-exploded-dot v2-dot-a" />
-              <div className="v2-exploded-dot v2-dot-b" />
+            <div className="v2-exploded">
+              <ProductStudy variant="exploded" className="v2-exploded-art" />
             </div>
           </div>
 
