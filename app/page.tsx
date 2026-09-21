@@ -45,7 +45,6 @@ export default function HomePage() {
 
       <section id="top" className="hero shell">
         <div className="ambient-shape shape-a" aria-hidden="true" />
-        <div className="ambient-shape shape-b" aria-hidden="true" />
         <div className="hero-membrane" aria-hidden="true" />
         <div className="hero-orbit" aria-hidden="true"><span>01</span></div>
         <div className="hero-copy">
