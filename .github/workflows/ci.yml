@@ -152,11 +152,11 @@ jobs:
 
           npx --yes playwright@1.55.0 screenshot             --browser chromium             --viewport-size "390,844"             "$PAGE_URL?review=1"             review/hero-mobile.jpeg
 
-          npx --yes playwright@1.55.0 screenshot             --browser chromium             --viewport-size "1440,900"             "$PAGE_URL?review=1#work"             review/work-desktop.jpeg
+          npx --yes playwright@1.55.0 screenshot             --browser chromium             --viewport-size "1440,900"             --wait-for-timeout 1200             "$PAGE_URL?review=1#work"             review/work-desktop.jpeg
 
-          npx --yes playwright@1.55.0 screenshot             --browser chromium             --viewport-size "1440,900"             "$PAGE_URL?review=1#approach"             review/approach-desktop.jpeg
+          npx --yes playwright@1.55.0 screenshot             --browser chromium             --viewport-size "1440,900"             --wait-for-timeout 1200             "$PAGE_URL?review=1#approach"             review/approach-desktop.jpeg
 
-          npx --yes playwright@1.55.0 screenshot             --browser chromium             --viewport-size "1440,900"             "$PAGE_URL?review=1#contact"             review/contact-desktop.jpeg
+          npx --yes playwright@1.55.0 screenshot             --browser chromium             --viewport-size "1440,900"             --wait-for-timeout 1200             "$PAGE_URL?review=1#contact"             review/contact-desktop.jpeg
 
       - name: Upload review evidence
         uses: actions/upload-artifact@v4
