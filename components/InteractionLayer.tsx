@@ -5,8 +5,16 @@ import { useEffect } from 'react';
 export function InteractionLayer() {
   useEffect(() => {
     const root = document.documentElement;
+    const params = new URLSearchParams(window.location.search);
+    const reviewMode = params.get('review') === '1';
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (reducedMotion) return;
+
+    if (reviewMode || reducedMotion) {
+      document.querySelectorAll<HTMLElement>('[data-reveal]').forEach((node) => {
+        node.classList.add('is-visible');
+      });
+      return;
+    }
 
     root.classList.add('v2-motion-ready');
 
