@@ -181,7 +181,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="v25-process">
+      <section id="approach" className="v25-process">
         <div className="v2-shell">
           <div className="v25-process-head" data-reveal>
             <span className="v2-label">03 / HOW WE SEE PRODUCT</span>
