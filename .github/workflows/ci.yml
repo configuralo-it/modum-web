@@ -104,7 +104,7 @@ jobs:
         run: |
           mkdir -p review
           for run in 1 2 3; do
-            npx --yes lighthouse@12 "$PAGE_URL" \
+            npx --yes lighthouse@12.7.0 "$PAGE_URL" \
               --quiet \
               --chrome-flags="--headless --no-sandbox --disable-dev-shm-usage" \
               --only-categories=performance,accessibility,best-practices,seo \
