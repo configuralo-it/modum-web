@@ -37,8 +37,9 @@ const mobileMenuScript = String.raw`
 
 export default function HomePage() {
   return (
-    <main className="v2">
+    <main className="v2 v25">
       <InteractionLayer />
+
       <header className="v2-header v2-shell">
         <a href="#top" className="v2-logo-link" aria-label="Modum Studio home">
           <BrandLogo className="v2-logo" />
@@ -63,80 +64,104 @@ export default function HomePage() {
         <script dangerouslySetInnerHTML={{ __html: mobileMenuScript }} />
       </header>
 
-      <section id="top" className="v2-hero">
-        <div className="v2-hero-wordmark" aria-hidden="true">
+      <section id="top" className="v25-hero v2-hero">
+        <div className="v25-grid-lines" aria-hidden="true" />
+        <div className="v2-hero-wordmark v25-wordmark" aria-hidden="true">
           <BrandLogo decorative />
         </div>
 
-        <div className="v2-shell v2-hero-grid">
-          <div className="v2-hero-intro">
+        <div className="v2-shell v25-hero-shell">
+          <div className="v25-hero-intro">
             <span className="v2-label">MODUM STUDIO / RIMINI — IT</span>
             <p>A creative and digital studio for real products.</p>
           </div>
 
-          <div className="v2-hero-statement">
+          <div className="v2-product-plate v25-product-stage" aria-label="Modum Product Study 01">
+            <ProductStudy variant="hero" className="v2-product-art v25-product-art" />
+            <span className="v25-object-note v25-object-note-a">STUDY / 01</span>
+            <span className="v25-object-note v25-object-note-b">FORM / MATERIAL / CONSTRUCTION</span>
+          </div>
+
+          <div className="v25-hero-statement">
             <h1>Make real product value visible.</h1>
-            <a href="#work" className="v2-arrow-link">Explore our work <span>→</span></a>
+            <a href="#work" className="v2-arrow-link">Selected work <span>↓</span></a>
           </div>
 
-          <div className="v2-product-plate" aria-label="Modum Product Study 01">
-            <ProductStudy variant="hero" className="v2-product-art" />
-            <div className="v2-product-caption">
-              <span>MODUM PRODUCT STUDY / 01</span>
-              <span>FORM / MATERIAL / CONSTRUCTION</span>
-            </div>
-          </div>
-
-          <div className="v2-hero-index">
-            <span>OBJECTS</span>
-            <span>IMAGES</span>
-            <span>DIGITAL</span>
+          <div className="v25-hero-axis" aria-hidden="true">
+            <span>OBJECT</span><i>/</i><span>IMAGE</span><i>/</i><span>DIGITAL</span>
           </div>
         </div>
       </section>
 
-      <section id="work" className="v2-work v2-shell">
-        <div className="v2-section-head" data-reveal>
+      <section id="work" className="v25-work v2-shell">
+        <div className="v25-section-intro" data-reveal>
           <span className="v2-label">01 / SELECTED WORK</span>
-          <p>Three Modum Studio Studies exploring how product value can become image, information and interaction.</p>
+          <p>Three Modum Studio Studies. Different media, one question: how much of the real product can be understood before it is physically in front of you?</p>
         </div>
 
-        <div className="v2-work-grid">
-          <article className="v2-work-main" data-reveal>
-            <div className="v2-study-image v2-study-product">
-              <ProductStudy variant="detail" className="v2-study-product-art" />
-            </div>
-            <div className="v2-work-meta">
-              <div><span>01</span><h2>Product / Material Study</h2></div>
+        <div className="v25-work-index">
+          <article className="v25-work-row v25-work-row-product" data-reveal>
+            <div className="v25-work-line">
+              <span>01</span>
+              <h2>Product / Material Study</h2>
               <p>3D · visual direction · product truth</p>
+              <b aria-hidden="true">↘</b>
+            </div>
+            <div className="v25-work-preview v25-preview-product">
+              <ProductStudy variant="detail" className="v25-work-product-art" />
+              <div className="v25-preview-caption">
+                <span>MODUM PRODUCT STUDY</span>
+                <span>SHELL / FRAME / JOINT</span>
+              </div>
             </div>
           </article>
 
-          <article className="v2-work-side v2-work-editorial" data-reveal>
-            <div className="v2-study-image" aria-hidden="true">
-              <strong>FORM</strong><i>/</i><b>02</b>
-              <span />
-            </div>
-            <div className="v2-work-meta">
-              <div><span>02</span><h2>Editorial System Study</h2></div>
+          <article className="v25-work-row v25-work-row-editorial" data-reveal>
+            <div className="v25-work-line">
+              <span>02</span>
+              <h2>Editorial System Study</h2>
               <p>Catalog · typography · hierarchy</p>
+              <b aria-hidden="true">↘</b>
+            </div>
+            <div className="v25-work-preview v25-preview-editorial" aria-hidden="true">
+              <div className="v25-editorial-sheet">
+                <small>MODUM / STUDY 02</small>
+                <strong>FORM</strong>
+                <i>/</i>
+                <span>PRODUCT<br />INFORMATION<br />AS SYSTEM</span>
+              </div>
+              <div className="v25-editorial-sheet v25-editorial-sheet-dark">
+                <small>CATALOG / 01—96</small>
+                <strong>MAT<br />TER</strong>
+                <span>OBJECTS / DETAILS / VARIANTS</span>
+              </div>
             </div>
           </article>
 
-          <article className="v2-work-side v2-work-digital" data-reveal>
-            <div className="v2-study-image" aria-hidden="true">
-              <div className="v2-config-ring" />
-              <ol><li>Oak</li><li>Steel</li><li>Fabric</li></ol>
-            </div>
-            <div className="v2-work-meta">
-              <div><span>03</span><h2>Configurator Study</h2></div>
+          <article className="v25-work-row v25-work-row-digital" data-reveal>
+            <div className="v25-work-line">
+              <span>03</span>
+              <h2>Configurator Study</h2>
               <p>Variants · interaction · decision</p>
+              <b aria-hidden="true">↘</b>
+            </div>
+            <div className="v25-work-preview v25-preview-digital" aria-hidden="true">
+              <div className="v25-config-object">
+                <div className="v25-config-ring" />
+                <span>01</span><span>02</span><span>03</span>
+              </div>
+              <div className="v25-config-list">
+                <small>MATERIAL</small>
+                <strong>Oak</strong>
+                <strong>Steel</strong>
+                <strong>Fabric</strong>
+              </div>
             </div>
           </article>
         </div>
       </section>
 
-      <section id="services" className="v2-capabilities">
+      <section id="services" className="v2-capabilities v25-capabilities">
         <div className="v2-shell">
           <div className="v2-capabilities-intro" data-reveal>
             <span className="v2-label">02 / WHAT WE MAKE</span>
@@ -156,31 +181,35 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="v2-process">
+      <section className="v25-process">
         <div className="v2-shell">
-          <div className="v2-section-head">
+          <div className="v25-process-head" data-reveal>
             <span className="v2-label">03 / HOW WE SEE PRODUCT</span>
-            <p>Process is evidence when it helps explain what makes the product worth choosing.</p>
+            <p>Process is useful when it reveals why an object is worth choosing.</p>
           </div>
 
-          <div className="v2-process-grid">
-            <div className="v2-process-copy" data-reveal>
+          <div className="v25-process-board" data-reveal>
+            <div className="v25-process-statement">
+              <span>PRODUCT STUDY / 01</span>
               <h2>A chair is never just a chair.</h2>
-              <p>It is material, proportion, joints, finish, context, variants, photography, information and the way a customer eventually makes a choice.</p>
+              <p>Material, proportion, joints, finish, context, variants, photography, information — and finally the moment a customer makes a choice.</p>
             </div>
 
-            <div className="v2-exploded" data-reveal>
-              <ProductStudy variant="exploded" className="v2-exploded-art" />
+            <div className="v25-process-object">
+              <ProductStudy variant="exploded" className="v25-process-art" />
             </div>
-          </div>
 
-          <div className="v2-process-line">
-            <span>UNDERSTAND</span><i>/</i><span>MAKE VISIBLE</span><i>/</i><span>BUILD CONFIDENCE</span><i>/</i><span>MAKE CHOICE EASIER</span>
+            <div className="v25-process-legend">
+              <span>01 / UNDERSTAND</span>
+              <span>02 / MAKE VISIBLE</span>
+              <span>03 / BUILD CONFIDENCE</span>
+              <span>04 / MAKE CHOICE EASIER</span>
+            </div>
           </div>
         </div>
       </section>
 
-      <section id="studio" className="v2-studio v2-shell">
+      <section id="studio" className="v2-studio v2-shell v25-studio">
         <span className="v2-label">04 / STUDIO</span>
         <div className="v2-studio-grid" data-reveal>
           <h2>Serious about the work.<br />Curious about everything.</h2>
@@ -194,7 +223,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="contact" className="v2-contact">
+      <section id="contact" className="v2-contact v25-contact">
         <div className="v2-contact-word" aria-hidden="true">/</div>
         <div className="v2-shell v2-contact-inner" data-reveal>
           <span className="v2-label">05 / START</span>
