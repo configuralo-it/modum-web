@@ -2,6 +2,7 @@ import { HeroStage } from '@/components/HeroStage';
 import { Reveal } from '@/components/Reveal';
 import { DistortedLens } from '@/components/DistortedLens';
 import { BrandLogo } from '@/components/BrandLogo';
+import { siteConfig } from '@/lib/site';
 
 const services = [
   ['01','3D Rendering','Photorealism, material, light and detail that make the product credible before a camera is involved.'],
@@ -151,12 +152,12 @@ export default function HomePage() {
           <div className="section-kicker"><span>/</span><i/><span>START</span></div>
           <h2>Show us the product.</h2>
           <p>We'll start by understanding what people need to see, know or experience.</p>
-          <a className="pill pill-signal" href="mailto:parliamo@modumstudio.it">Start a conversation <span>↗</span></a>
-          <small className="mono">PARLIAMO@MODUMSTUDIO.IT</small>
+          <a className="pill pill-signal" href={`mailto:${siteConfig.email}`}>Start a conversation <span>↗</span></a>
+          <small className="mono">{siteConfig.email.toUpperCase()}</small>
         </Reveal>
       </section>
 
-      <footer className="shell footer"><BrandLogo className="brand-logo brand-logo-footer" decorative /><a className="mono footer-domain" href="https://modumstudio.it">MODUMSTUDIO.IT</a><span className="mono">© 2026</span></footer>
+      <footer className="shell footer"><BrandLogo className="brand-logo brand-logo-footer" decorative /><a className="mono footer-domain" href={siteConfig.url}>{siteConfig.domain.toUpperCase()}</a><span className="mono">© 2026</span></footer>
     </main>
   );
 }
