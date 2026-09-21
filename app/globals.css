@@ -752,3 +752,150 @@ button:focus-visible{
   .mobile-menu{display:block}
   .desktop-contact{display:none}
 }
+
+
+/* MOD-WEB-001 — case study system (published projects only) */
+.case-study{
+  min-height:100vh;
+  background:var(--paper);
+}
+.case-study-header{
+  height:92px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  border-bottom:1px solid rgba(60,63,69,.12);
+}
+.case-study-hero{
+  padding-top:110px;
+  padding-bottom:86px;
+}
+.case-study-hero h1{
+  max-width:1000px;
+  margin:22px 0 34px;
+  font-family:'Montserrat Variable',Arial,sans-serif;
+  font-size:clamp(64px,8vw,126px);
+  line-height:.86;
+  letter-spacing:-.065em;
+  font-weight:500;
+}
+.case-study-hero>p{
+  max-width:690px;
+  margin:52px 0 0 auto;
+  font-size:22px;
+  line-height:1.38;
+  letter-spacing:-.025em;
+}
+.case-study-meta{
+  display:grid;
+  grid-template-columns:1fr auto minmax(260px,1fr);
+  gap:24px;
+  padding-top:18px;
+  border-top:1px solid rgba(60,63,69,.14);
+  font-family:'Montserrat Variable',Arial,sans-serif;
+  font-size:11px;
+  line-height:1.3;
+  letter-spacing:.09em;
+  text-transform:uppercase;
+}
+.case-study-meta span:last-child{
+  text-align:right;
+}
+.case-study-media{
+  margin-top:0;
+  margin-bottom:0;
+  overflow:hidden;
+  background:var(--paper-2);
+}
+.case-study-media img{
+  display:block;
+  width:100%;
+  height:auto;
+  min-height:54vw;
+  object-fit:cover;
+}
+.case-study-story{
+  padding-top:120px;
+  padding-bottom:120px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:56px;
+}
+.case-study-story article{
+  border-top:1px solid rgba(60,63,69,.16);
+  padding-top:18px;
+}
+.case-study-story article p{
+  margin:34px 0 0;
+  font-size:18px;
+  line-height:1.45;
+}
+.case-study-gallery{
+  display:grid;
+  grid-template-columns:repeat(12,1fr);
+  gap:18px;
+  padding-bottom:120px;
+}
+.case-study-gallery figure{
+  grid-column:span 6;
+  margin:0;
+}
+.case-study-gallery figure:nth-child(3n){
+  grid-column:3 / span 8;
+}
+.case-study-gallery img{
+  display:block;
+  width:100%;
+  height:auto;
+  background:var(--paper-2);
+}
+.case-study-gallery figcaption{
+  padding-top:10px;
+}
+.case-study-footer{
+  min-height:240px;
+  border-top:1px solid rgba(60,63,69,.14);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.case-study-footer>a{
+  display:inline-flex;
+  gap:16px;
+  align-items:center;
+  font-family:'Montserrat Variable',Arial,sans-serif;
+  font-size:18px;
+}
+@media(max-width:800px){
+  .case-study-header{height:76px}
+  .case-study-hero{padding-top:76px;padding-bottom:64px}
+  .case-study-hero h1{font-size:58px;max-width:620px}
+  .case-study-hero>p{margin-top:40px;font-size:18px}
+  .case-study-meta{
+    grid-template-columns:1fr;
+    gap:8px;
+  }
+  .case-study-meta span:last-child{text-align:left}
+  .case-study-story{
+    grid-template-columns:1fr;
+    gap:48px;
+    padding-top:82px;
+    padding-bottom:82px;
+  }
+  .case-study-gallery{
+    grid-template-columns:1fr;
+    gap:42px;
+    padding-bottom:82px;
+  }
+  .case-study-gallery figure,
+  .case-study-gallery figure:nth-child(3n){
+    grid-column:auto;
+  }
+  .case-study-footer{
+    min-height:180px;
+    align-items:flex-start;
+    justify-content:center;
+    flex-direction:column;
+    gap:34px;
+  }
+}
