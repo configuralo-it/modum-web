@@ -29,7 +29,7 @@ export default function HomePage() {
           <a href="#approach">Approach</a>
           <a href="#studio">Studio</a>
         </nav>
-        <a className="pill pill-dark" href="#contact">Start a project <span>●</span></a>
+        <a className="pill pill-dark" href="#contact">Let's talk <span>/</span></a>
       </header>
 
       <section id="top" className="hero shell">
@@ -39,10 +39,10 @@ export default function HomePage() {
         <div className="hero-orbit" aria-hidden="true"><span>01</span></div>
         <div className="hero-copy">
           <div className="eyebrow"><span>00</span><i /> <span>PRODUCT / PERCEPTION</span></div>
-          <h1>Products deserve a clearer reality.</h1>
-          <p className="hero-lead">Visual, digital and interactive work that makes real product value easier to perceive, understand and choose.</p>
+          <h1>Make real product value visible.</h1>
+          <p className="hero-lead">We reduce the distance between what a product is and what people can perceive before they have it in front of them.</p>
           <div className="hero-actions">
-            <a className="pill pill-dark" href="#work">Explore our work <span>↗</span></a>
+            <a className="pill pill-dark" href="#services">What we do <span>↗</span></a>
             <a className="text-link" href="#approach">Our approach <span>→</span></a>
           </div>
         </div>
