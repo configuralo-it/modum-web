@@ -1626,3 +1626,60 @@ button:focus-visible{
     transform:none;
   }
 }
+
+
+/* MOD-WEB-001 v1.7 — compositor-first motion */
+.ambient-shape{
+  will-change:transform;
+}
+.shape-a{
+  animation:modumCurveDrift 22s cubic-bezier(.45,.05,.25,1) infinite alternate;
+}
+.hero-membrane{
+  animation:membraneDrift 18s cubic-bezier(.45,.05,.25,1) infinite alternate;
+  will-change:transform;
+}
+.contact-blob{
+  border-radius:44% 56% 63% 37% / 58% 39% 61% 42%;
+  animation:contactDrift 19s cubic-bezier(.45,.05,.25,1) infinite alternate;
+  will-change:transform;
+}
+.logic:after{
+  display:none;
+}
+.logic i{
+  animation:logicArrow 4.8s ease-in-out infinite;
+  will-change:transform,opacity;
+}
+.logic i:nth-of-type(2){animation-delay:.38s}
+.logic i:nth-of-type(3){animation-delay:.76s}
+
+@keyframes modumCurveDrift{
+  0%{transform:translate3d(0,0,0) rotate(-9deg) scale(1)}
+  52%{transform:translate3d(-7px,8px,0) rotate(-8.2deg) scale(1.015,.992)}
+  100%{transform:translate3d(5px,13px,0) rotate(-9.6deg) scale(.998,1.012)}
+}
+@keyframes membraneDrift{
+  0%{transform:translate3d(0,0,0) rotate(-3deg) scaleX(.99)}
+  52%{transform:translate3d(-5px,4px,0) rotate(-2.35deg) scaleX(1.018)}
+  100%{transform:translate3d(4px,7px,0) rotate(-3.4deg) scaleX(1.006)}
+}
+@keyframes contactDrift{
+  0%{transform:translate3d(-5px,0,0) rotate(-.7deg) scale(.995)}
+  50%{transform:translate3d(5px,-4px,0) rotate(.6deg) scale(1.015)}
+  100%{transform:translate3d(0,5px,0) rotate(-.4deg) scale(1.002)}
+}
+@keyframes logicArrow{
+  0%,62%,100%{transform:translate3d(0,0,0);opacity:.62}
+  72%{transform:translate3d(4px,0,0);opacity:1}
+  82%{transform:translate3d(0,0,0);opacity:.74}
+}
+@media(prefers-reduced-motion:reduce){
+  .shape-a,
+  .hero-membrane,
+  .contact-blob,
+  .logic i{
+    animation:none!important;
+    will-change:auto;
+  }
+}
