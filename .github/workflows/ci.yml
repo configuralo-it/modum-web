@@ -128,7 +128,7 @@ jobs:
         run: |
           npx --yes playwright@1.55.0 screenshot             --browser chromium             --viewport-size "1440,1000"             --full-page             "$PAGE_URL"             review/latest-desktop.png
 
-          npx --yes playwright@1.55.0 screenshot             --browser chromium             --device "iPhone 14"             --full-page             "$PAGE_URL"             review/latest-mobile.png
+          npx --yes playwright@1.55.0 screenshot             --browser chromium             --viewport-size "390,844"             --full-page             "$PAGE_URL"             review/latest-mobile.png
 
       - name: Persist review artifacts
         run: |
