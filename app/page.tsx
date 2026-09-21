@@ -3,18 +3,18 @@ import { Reveal } from '@/components/Reveal';
 import { DistortedLens } from '@/components/DistortedLens';
 
 const services = [
-  ['01','3D Rendering','Fotorealismo, materia, luce e dettaglio per rendere il prodotto credibile prima dello scatto.'],
-  ['02','Cataloghi & Brochure','Sistemi editoriali che organizzano collezioni, varianti e informazioni senza perdere qualità.'],
-  ['03','Foto & Video','Contenuti che mostrano prodotto, contesto, utilizzo e carattere senza sovraccaricare la scena.'],
-  ['04','Product Configurators','Interfacce per esplorare varianti e capire cosa cambia quando cambia una scelta.'],
-  ['05','Web & E-commerce','Esperienze digitali costruite attorno al prodotto e alla decisione, non attorno al template.'],
-  ['06','AI Strategy & Automation','Tecnologia quando ha un compito: coerenza, velocità, qualità e processi più efficienti.'],
+  ['01','3D Rendering','Photorealism, material, light and detail that make the product credible before a camera is involved.'],
+  ['02','Catalogs & Brochures','Editorial systems that organise collections, variants and information without flattening the product.'],
+  ['03','Photo & Video','Content that shows product, context, use and character without overloading the scene.'],
+  ['04','Product Configurators','Interfaces for exploring variants and understanding exactly what changes when a choice changes.'],
+  ['05','Web & E-commerce','Digital experiences built around the product and the decision, not around a template.'],
+  ['06','AI Strategy & Automation','Technology when it has a job: consistency, speed, quality and more efficient processes.'],
 ];
 
 const projects = [
-  ['01','TODO / Product study','3D · Product visualization'],
-  ['02','TODO / Editorial study','Editorial · Catalog'],
-  ['03','TODO / Digital study','Web · Configurator'],
+  ['01','Visual placeholder','Product / 3D · real asset pending'],
+  ['02','Visual placeholder','Editorial / Catalog · real asset pending'],
+  ['03','Visual placeholder','Web / Configurator · real asset pending'],
 ];
 
 export default function HomePage() {
@@ -34,6 +34,8 @@ export default function HomePage() {
       <section id="top" className="hero shell">
         <div className="ambient-shape shape-a" aria-hidden="true" />
         <div className="ambient-shape shape-b" aria-hidden="true" />
+        <div className="hero-membrane" aria-hidden="true" />
+        <div className="hero-orbit" aria-hidden="true"><span>01</span></div>
         <div className="hero-copy">
           <div className="eyebrow"><span>00</span><i /> <span>PRODUCT / PERCEPTION</span></div>
           <h1>Products deserve a clearer reality.</h1>
@@ -57,7 +59,7 @@ export default function HomePage() {
 
       <section id="work" className="work section shell">
         <Reveal>
-          <div className="section-kicker"><span>●</span><i/><span>SELECTED WORK</span><b>01 / 03</b></div>
+          <div className="section-kicker"><span>●</span><i/><span>SELECTED WORK</span><b>REAL ASSETS PENDING</b></div>
           <div className="project-grid">
             {projects.map(([n,title,meta], idx) => (
               <article className={`project project-${idx+1}`} key={n}>
@@ -129,8 +131,8 @@ export default function HomePage() {
           <div className="section-kicker"><span>●</span><i/><span>START</span></div>
           <h2>Show us the product.</h2>
           <p>We'll start by understanding what people need to see, know or experience.</p>
-          <a className="pill pill-signal" href="mailto:TODO">Start a conversation <span>↗</span></a>
-          <small className="mono">TODO / PUBLIC CONTACT EMAIL</small>
+          <button className="pill pill-signal prototype-cta" type="button" aria-disabled="true">Start a conversation <span>↗</span></button>
+          <small className="mono">CONTACT CHANNEL / PENDING</small>
         </Reveal>
       </section>
 
