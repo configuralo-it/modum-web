@@ -1,5 +1,6 @@
 import { HeroStage } from '@/components/HeroStage';
 import { Reveal } from '@/components/Reveal';
+import { RevealController } from '@/components/RevealController';
 import { DistortedLens } from '@/components/DistortedLens';
 import { BrandLogo } from '@/components/BrandLogo';
 import { siteConfig } from '@/lib/site';
@@ -22,6 +23,7 @@ const projects = [
 export default function HomePage() {
   return (
     <main>
+      <RevealController />
       <header className="site-header shell">
         <a className="brand brand-link" href="#top" aria-label="Modum Studio home"><BrandLogo className="brand-logo brand-logo-header" /></a>
         <nav aria-label="Primary navigation">
