@@ -2300,3 +2300,44 @@ button:focus-visible{
   .v2-work-meta span,.v2-work-meta p{font-size:9.5px}
   .v2-section-head p{font-size:13.5px;line-height:1.45}
 }
+
+
+/* MOD-WEB-001 v2.2 — coherent Product Study artwork */
+.v2-product-art{
+  position:absolute;
+  inset:1% 1% 8%;
+  width:98%;
+  height:91%;
+  display:block;
+}
+.v2-study-product{
+  background:
+    linear-gradient(90deg,rgba(60,63,69,.045) 1px,transparent 1px) 0 0/25% 100%,
+    linear-gradient(145deg,#dad2ca,#b8afa6);
+}
+.v2-study-product-art{
+  display:block;
+  width:100%;
+  height:100%;
+}
+.v2-exploded{
+  overflow:hidden;
+}
+.v2-exploded-art{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  display:block;
+}
+@media(max-width:640px){
+  .v2-product-art{
+    inset:2% -7% 9%;
+    width:114%;
+    height:89%;
+  }
+  .v2-exploded-art{
+    width:116%;
+    left:-8%;
+  }
+}
