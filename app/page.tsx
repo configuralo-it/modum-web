@@ -13,9 +13,9 @@ const services = [
 ];
 
 const projects = [
-  ['01','Material study','Product form / 3D · prototype study'],
-  ['02','Editorial study','Catalog system · prototype study'],
-  ['03','Configurator study','Digital sales tool · prototype study'],
+  ['01','Material study','Product form / 3D · Modum study'],
+  ['02','Editorial study','Catalog system · Modum study'],
+  ['03','Configurator study','Digital sales tool · Modum study'],
 ];
 
 export default function HomePage() {
