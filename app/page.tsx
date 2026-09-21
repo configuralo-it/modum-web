@@ -64,7 +64,7 @@ export default function HomePage() {
             {projects.map(([n,title,meta], idx) => (
               <article className={`project project-${idx+1}`} key={n}>
                 <div className="project-visual" aria-hidden="true"><span className="mono">/{n}</span><div className="project-object" /></div>
-                <div className="project-info"><div><h3>{title}</h3><p>{meta}</p></div><button aria-label={`Open ${title}`}>+</button></div>
+                <div className="project-info"><div><h3>{title}</h3><p>{meta}</p></div><span className="project-marker mono" aria-hidden="true">PENDING</span></div>
               </article>
             ))}
           </div>
@@ -131,7 +131,7 @@ export default function HomePage() {
           <div className="section-kicker"><span>●</span><i/><span>START</span></div>
           <h2>Show us the product.</h2>
           <p>We'll start by understanding what people need to see, know or experience.</p>
-          <button className="pill pill-signal prototype-cta" type="button" aria-disabled="true">Start a conversation <span>↗</span></button>
+          <button className="pill pill-signal prototype-cta" type="button" disabled>Start a conversation <span>↗</span></button>
           <small className="mono">CONTACT CHANNEL / PENDING</small>
         </Reveal>
       </section>
