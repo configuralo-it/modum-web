@@ -13,7 +13,15 @@ export function RevealController() {
     const params = new URLSearchParams(window.location.search);
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    if (params.get('review') === '1' || reduced) {
+    if (params.get('review') === '1') {
+      nodes.forEach((node) => {
+        node.style.transition = 'none';
+        node.classList.add('is-visible');
+      });
+      return;
+    }
+
+    if (reduced) {
       nodes.forEach((node) => node.classList.add('is-visible'));
       return;
     }
