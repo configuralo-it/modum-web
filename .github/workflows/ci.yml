@@ -59,7 +59,7 @@ jobs:
   deploy:
     name: Deploy GitHub Pages
     environment:
-      name: github-pages
+      name: modum-preview
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     needs: build
