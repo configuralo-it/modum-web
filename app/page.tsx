@@ -127,6 +127,7 @@ export default function HomePage() {
       </section>
 
       <section id="studio" className="studio section shell">
+        <BrandLogo className="studio-brand-fragment" decorative />
         <Reveal className="studio-grid">
           <div><div className="section-kicker"><span>/</span><i/><span>STUDIO</span></div><h2>Serious about the work.<br/>Curious about everything.</h2></div>
           <div className="studio-copy"><p>Modum is a creative and digital studio built around product understanding, visual craft and technical capability.</p><p>Two cofounders, distributed responsibilities, one shared standard: make it clear, intentional and worth choosing.</p></div>
@@ -140,8 +141,8 @@ export default function HomePage() {
           <div className="section-kicker"><span>/</span><i/><span>START</span></div>
           <h2>Show us the product.</h2>
           <p>We'll start by understanding what people need to see, know or experience.</p>
-          <button className="pill pill-signal prototype-cta" type="button" disabled>Start a conversation <span>↗</span></button>
-          <small className="mono">CONTACT CHANNEL / PENDING</small>
+          <a className="pill pill-signal" href="mailto:parliamo@modumstudio.it">Start a conversation <span>↗</span></a>
+          <small className="mono">PARLIAMO@MODUMSTUDIO.IT</small>
         </Reveal>
       </section>
 
