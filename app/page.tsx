@@ -1,17 +1,13 @@
-import { HeroStage } from '@/components/HeroStage';
-import { Reveal } from '@/components/Reveal';
-import { RevealController } from '@/components/RevealController';
-import { DistortedLens } from '@/components/DistortedLens';
 import { BrandLogo } from '@/components/BrandLogo';
 import { siteConfig } from '@/lib/site';
 
 const services = [
-  ['01','3D Rendering','Photorealism, material, light and detail that make the product credible before a camera is involved.'],
-  ['02','Catalogs & Brochures','Editorial systems that organise collections, variants and information without flattening the product.'],
-  ['03','Photo & Video','Content that shows product, context, use and character without overloading the scene.'],
-  ['04','Product Configurators','Interfaces for exploring variants and understanding exactly what changes when a choice changes.'],
-  ['05','Web & E-commerce','Digital experiences built around the product and the decision, not around a template.'],
-  ['06','AI Strategy & Automation','Technology when it has a job: consistency, speed, quality and more efficient processes.'],
+  ['01', '3D Rendering', 'Form, material, light and proportion before the product is physically in front of the customer.'],
+  ['02', 'Catalogs & Brochures', 'Collections, variants and information turned into a clear editorial system.'],
+  ['03', 'Photo & Video', 'Product, context and use shown with enough direction to make the real value legible.'],
+  ['04', 'Product Configurators', 'Choices become visible. Variants, finishes and combinations become easier to understand.'],
+  ['05', 'Web & E-commerce', 'Digital product experiences designed around what people need to see, understand and choose.'],
+  ['06', 'AI Strategy & Automation', 'Technology used where it improves consistency, speed or the quality of the process.'],
 ];
 
 const mobileMenuScript = String.raw`
@@ -32,158 +28,202 @@ const mobileMenuScript = String.raw`
   });
 
   document.addEventListener('pointerdown', (event) => {
-    if (!menu.open || menu.contains(event.target)) return;
-    close();
+    if (!menu.open || menu.contains(event.target)) close();
   }, { passive: true });
 })();
 `;
 
-const projects = [
-  ['01','Material study','Product form / 3D · Modum study'],
-  ['02','Editorial study','Catalog system · Modum study'],
-  ['03','Configurator study','Digital sales tool · Modum study'],
-];
-
 export default function HomePage() {
   return (
-    <main>
-      <RevealController />
-      <header className="site-header shell">
-        <a className="brand brand-link" href="#top" aria-label="Modum Studio home"><BrandLogo className="brand-logo brand-logo-header" /></a>
-        <nav aria-label="Primary navigation">
+    <main className="v2">
+      <header className="v2-header v2-shell">
+        <a href="#top" className="v2-logo-link" aria-label="Modum Studio home">
+          <BrandLogo className="v2-logo" />
+        </a>
+
+        <nav className="v2-nav" aria-label="Primary navigation">
           <a href="#work">Work</a>
-          <a href="#services">Services</a>
-          <a href="#approach">Approach</a>
+          <a href="#services">What we make</a>
           <a href="#studio">Studio</a>
+          <a href="#contact">Contact</a>
         </nav>
-        <a className="pill pill-dark desktop-contact" href="#contact">Let's talk <span>/</span></a>
-        <details className="mobile-menu">
-          <summary aria-label="Open navigation"><span>Menu</span><i>/</i></summary>
-          <div className="mobile-menu-panel">
+
+        <details className="v2-mobile-menu">
+          <summary aria-label="Open navigation">Menu <i>/</i></summary>
+          <div>
             <a href="#work">Work</a>
-            <a href="#services">Services</a>
-            <a href="#approach">Approach</a>
+            <a href="#services">What we make</a>
             <a href="#studio">Studio</a>
-            <a href="#contact">Let's talk</a>
+            <a href="#contact">Contact</a>
           </div>
         </details>
         <script dangerouslySetInnerHTML={{ __html: mobileMenuScript }} />
       </header>
 
-      <section id="top" className="hero shell">
-        <div className="ambient-shape shape-a" aria-hidden="true" />
-        <div className="hero-membrane" aria-hidden="true" />
-        <div className="hero-orbit" aria-hidden="true"><span>01</span></div>
-        <div className="hero-copy">
-          <div className="eyebrow"><span>00</span><i /> <span>PRODUCT / PERCEPTION</span></div>
-          <h1>Make real product value visible.</h1>
-          <p className="hero-lead">We reduce the distance between what a product is and what people can perceive before they have it in front of them.</p>
-          <div className="hero-actions">
-            <a className="pill pill-dark" href="#services">What we do <span>↗</span></a>
-            <a className="text-link" href="#approach">Our approach <span>→</span></a>
+      <section id="top" className="v2-hero">
+        <div className="v2-hero-wordmark" aria-hidden="true">
+          <BrandLogo decorative />
+        </div>
+
+        <div className="v2-shell v2-hero-grid">
+          <div className="v2-hero-intro">
+            <span className="v2-label">MODUM STUDIO / RIMINI — IT</span>
+            <p>A creative and digital studio for real products.</p>
           </div>
-        </div>
-        <div className="hero-stage">
-          <HeroStage />
-          <div className="annotation annotation-a"><span>Construction</span><b>shell / frame / joint</b></div>
-          <div className="annotation annotation-b"><span>Product study</span><b>form / material / detail</b></div>
-        </div>
-        <div className="hero-meta mono">
-          <span>SCROLL</span><i />
-          <span>Product Truth / Commercial Clarity</span>
-          <span>Product / Visual / Digital</span>
+
+          <div className="v2-hero-statement">
+            <h1>Make real product value visible.</h1>
+            <a href="#work" className="v2-arrow-link">Explore our work <span>→</span></a>
+          </div>
+
+          <div className="v2-product-plate" aria-label="Modum Product Study 01">
+            <div className="v2-product-object" aria-hidden="true">
+              <span className="v2-product-shell" />
+              <span className="v2-product-leg v2-product-leg-a" />
+              <span className="v2-product-leg v2-product-leg-b" />
+              <span className="v2-product-joint v2-product-joint-a" />
+              <span className="v2-product-joint v2-product-joint-b" />
+            </div>
+            <div className="v2-product-caption">
+              <span>MODUM PRODUCT STUDY / 01</span>
+              <span>FORM / MATERIAL / CONSTRUCTION</span>
+            </div>
+          </div>
+
+          <div className="v2-hero-index">
+            <span>OBJECTS</span>
+            <span>IMAGES</span>
+            <span>DIGITAL</span>
+          </div>
         </div>
       </section>
 
-      <section id="work" className="work section shell">
-        <Reveal>
-          <div className="section-kicker"><span>/</span><i/><span>STUDIO STUDIES</span><b>FORM / SYSTEM / INTERACTION</b></div>
-          <h2 className="sr-only">Modum Studio studies</h2>
-          <div className="project-grid">
-            {projects.map(([n,title,meta], idx) => (
-              <article className={`project project-${idx+1}`} key={n}>
-                <div className="project-visual" aria-hidden="true">
-                  <span className="mono">/{n}</span>
-                  <div className="project-object">
-                    <i className="study-shape" />
-                    <i className="study-detail" />
-                  </div>
-                </div>
-                <div className="project-info"><div><h3>{title}</h3><p>{meta}</p></div><span className="project-marker mono" aria-hidden="true">STUDY</span></div>
+      <section id="work" className="v2-work v2-shell">
+        <div className="v2-section-head">
+          <span className="v2-label">01 / SELECTED WORK</span>
+          <p>Until publishable client work is verified, these are explicitly Modum Studio Studies.</p>
+        </div>
+
+        <div className="v2-work-grid">
+          <article className="v2-work-main">
+            <div className="v2-study-image v2-study-product" aria-hidden="true">
+              <span className="v2-study-product-shell" />
+              <span className="v2-study-product-frame" />
+              <span className="v2-study-product-accent" />
+            </div>
+            <div className="v2-work-meta">
+              <div><span>01</span><h2>Product / Material Study</h2></div>
+              <p>3D · visual direction · product truth</p>
+            </div>
+          </article>
+
+          <article className="v2-work-side v2-work-editorial">
+            <div className="v2-study-image" aria-hidden="true">
+              <strong>FORM</strong><i>/</i><b>02</b>
+              <span />
+            </div>
+            <div className="v2-work-meta">
+              <div><span>02</span><h2>Editorial System Study</h2></div>
+              <p>Catalog · typography · hierarchy</p>
+            </div>
+          </article>
+
+          <article className="v2-work-side v2-work-digital">
+            <div className="v2-study-image" aria-hidden="true">
+              <div className="v2-config-ring" />
+              <ol><li>Oak</li><li>Steel</li><li>Fabric</li></ol>
+            </div>
+            <div className="v2-work-meta">
+              <div><span>03</span><h2>Configurator Study</h2></div>
+              <p>Variants · interaction · decision</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="services" className="v2-capabilities">
+        <div className="v2-shell">
+          <div className="v2-capabilities-intro">
+            <span className="v2-label">02 / WHAT WE MAKE</span>
+            <h2>Different disciplines.<br />One product reality.</h2>
+            <p>We choose the medium after understanding what the product needs people to perceive.</p>
+          </div>
+
+          <div className="v2-service-list">
+            {services.map(([n, title, description]) => (
+              <article key={n}>
+                <span>{n}</span>
+                <h3>{title}</h3>
+                <p>{description}</p>
               </article>
             ))}
           </div>
-        </Reveal>
+        </div>
       </section>
 
-      <section id="services" className="services section shell">
-        <Reveal className="services-layout">
-          <div className="services-intro">
-            <div className="section-kicker"><span>/</span><i/><span>WHAT WE DO</span></div>
-            <h2>From product to product experience.</h2>
-            <p>Different disciplines, one job: make the product clearer, more credible and easier to choose.</p>
+      <section className="v2-process">
+        <div className="v2-shell">
+          <div className="v2-section-head">
+            <span className="v2-label">03 / HOW WE SEE PRODUCT</span>
+            <p>Process is evidence when it helps explain what makes the product worth choosing.</p>
           </div>
-          <div className="service-list">
-            {services.map(([n,title,desc]) => <div className="service-row" key={n}><span className="mono">{n}</span><h3>{title}</h3><p>{desc}</p></div>)}
-          </div>
-        </Reveal>
-      </section>
 
-      <section id="approach" className="approach section-dark">
-        <div className="dark-curve" aria-hidden="true" />
-        <div className="shell approach-grid">
-          <Reveal>
-            <div className="section-kicker on-dark"><span>/</span><i/><span>APPROACH</span></div>
-            <h2>Understand deeply.<br/>Then amplify.</h2>
-            <p>We start with what the product is, how it works and what people need to understand. Creativity and technology come after.</p>
-          </Reveal>
-          <Reveal className="approach-visual">
-            <div className="detail-slab"><div className="detail-edge"/></div>
-            <DistortedLens />
-            <div className="approach-note mono">DETAILS / MATERIAL / LIGHT / FORM</div>
-          </Reveal>
-          <div className="logic mono">
-            <span>PRODUCT TRUTH</span><i>→</i><span>UNDERSTANDING</span><i>→</i><span>CONFIDENCE</span><i>→</i><span>CHOICE</span>
+          <div className="v2-process-grid">
+            <div className="v2-process-copy">
+              <h2>A chair is never just a chair.</h2>
+              <p>It is material, proportion, joints, finish, context, variants, photography, information and the way a customer eventually makes a choice.</p>
+            </div>
+
+            <div className="v2-exploded" aria-label="Product construction study">
+              <span className="v2-ex-shell">Shell</span>
+              <span className="v2-ex-frame">Frame</span>
+              <span className="v2-ex-joint">Joint</span>
+              <span className="v2-ex-detail">Detail</span>
+              <div className="v2-exploded-shell" />
+              <div className="v2-exploded-frame" />
+              <div className="v2-exploded-bar" />
+              <div className="v2-exploded-dot v2-dot-a" />
+              <div className="v2-exploded-dot v2-dot-b" />
+            </div>
+          </div>
+
+          <div className="v2-process-line">
+            <span>UNDERSTAND</span><i>/</i><span>MAKE VISIBLE</span><i>/</i><span>BUILD CONFIDENCE</span><i>/</i><span>MAKE CHOICE EASIER</span>
           </div>
         </div>
       </section>
 
-      <section className="detail section shell">
-        <Reveal className="detail-grid">
+      <section id="studio" className="v2-studio v2-shell">
+        <span className="v2-label">04 / STUDIO</span>
+        <div className="v2-studio-grid">
+          <h2>Serious about the work.<br />Curious about everything.</h2>
           <div>
-            <div className="section-kicker"><span>/</span><i/><span>LOOK CLOSER</span></div>
-            <h2>Does it get better when you look closer?</h2>
-            <p>Quality lives in the second reading: material, proportion, interaction, wording, transitions, details that continue to make sense up close.</p>
+            <p>Modum is a creative and digital studio built around product understanding, visual craft and technical capability.</p>
+            <p>We do not start from the medium. We start from what the product is and what people need to understand.</p>
+            <div className="v2-founders">
+              <span>Giada Rossetti</span><i>/</i><span>Alberto G. Ferrario</span>
+            </div>
           </div>
-          <div className="inspection-card">
-            <div className="inspection-surface" />
-            <span className="inspection-dot"/>
-            <p className="mono">INSPECT / EDGE DETAIL / 02</p>
+        </div>
+      </section>
+
+      <section id="contact" className="v2-contact">
+        <div className="v2-contact-word" aria-hidden="true">/</div>
+        <div className="v2-shell v2-contact-inner">
+          <span className="v2-label">05 / START</span>
+          <h2>Show us<br />the product.</h2>
+          <div className="v2-contact-side">
+            <p>We will start by understanding what people need to see, know or experience.</p>
+            <a href={`mailto:${siteConfig.email}`}>{siteConfig.email} <span>↗</span></a>
           </div>
-        </Reveal>
+        </div>
       </section>
 
-      <section id="studio" className="studio section shell">
-        <BrandLogo className="studio-brand-fragment" decorative />
-        <Reveal className="studio-grid">
-          <div><div className="section-kicker"><span>/</span><i/><span>STUDIO</span></div><h2>Serious about the work.<br/>Curious about everything.</h2></div>
-          <div className="studio-copy"><p>Modum is a creative and digital studio built around product understanding, visual craft and technical capability.</p><p>Two cofounders, distributed responsibilities, one shared standard: make it clear, intentional and worth choosing.</p><div className="studio-names"><span>Giada Rossetti</span><i>/</i><span>Alberto G. Ferrario</span></div></div>
-        </Reveal>
-      </section>
-
-      <section id="contact" className="contact shell">
-        <BrandLogo className="brand-fragment" decorative />
-        <div className="contact-blob" aria-hidden="true" />
-        <Reveal className="contact-inner">
-          <div className="section-kicker"><span>/</span><i/><span>START</span></div>
-          <h2>Show us the product.</h2>
-          <p>We'll start by understanding what people need to see, know or experience.</p>
-          <a className="pill pill-signal" href={`mailto:${siteConfig.email}`}>Start a conversation <span>↗</span></a>
-          <small className="mono">{siteConfig.email.toUpperCase()}</small>
-        </Reveal>
-      </section>
-
-      <footer className="shell footer"><BrandLogo className="brand-logo brand-logo-footer" decorative /><a className="mono footer-domain" href={siteConfig.url}>{siteConfig.domain.toUpperCase()}</a><span className="mono">© 2026</span></footer>
+      <footer className="v2-footer v2-shell">
+        <BrandLogo className="v2-footer-logo" decorative />
+        <span>{siteConfig.domain}</span>
+        <span>© 2026</span>
+      </footer>
     </main>
   );
 }
