@@ -60,7 +60,8 @@ export default function HomePage() {
 
       <section id="work" className="work section shell">
         <Reveal>
-          <div className="section-kicker"><span>●</span><i/><span>SELECTED WORK</span><b>REAL ASSETS PENDING</b></div>
+          <div className="section-kicker"><span>/</span><i/><span>SELECTED WORK</span><b>REAL ASSETS PENDING</b></div>
+          <h2 className="sr-only">Selected work studies</h2>
           <div className="project-grid">
             {projects.map(([n,title,meta], idx) => (
               <article className={`project project-${idx+1}`} key={n}>
@@ -81,7 +82,7 @@ export default function HomePage() {
       <section id="services" className="services section shell">
         <Reveal className="services-layout">
           <div className="services-intro">
-            <div className="section-kicker"><span>●</span><i/><span>WHAT WE DO</span></div>
+            <div className="section-kicker"><span>/</span><i/><span>WHAT WE DO</span></div>
             <h2>From product to product experience.</h2>
             <p>Different disciplines, one job: make the product clearer, more credible and easier to choose.</p>
           </div>
@@ -95,7 +96,7 @@ export default function HomePage() {
         <div className="dark-curve" aria-hidden="true" />
         <div className="shell approach-grid">
           <Reveal>
-            <div className="section-kicker on-dark"><span>●</span><i/><span>APPROACH</span></div>
+            <div className="section-kicker on-dark"><span>/</span><i/><span>APPROACH</span></div>
             <h2>Understand deeply.<br/>Then amplify.</h2>
             <p>We start with what the product is, how it works and what people need to understand. Creativity and technology come after.</p>
           </Reveal>
@@ -113,7 +114,7 @@ export default function HomePage() {
       <section className="detail section shell">
         <Reveal className="detail-grid">
           <div>
-            <div className="section-kicker"><span>●</span><i/><span>LOOK CLOSER</span></div>
+            <div className="section-kicker"><span>/</span><i/><span>LOOK CLOSER</span></div>
             <h2>Does it get better when you look closer?</h2>
             <p>Quality lives in the second reading: material, proportion, interaction, wording, transitions, details that continue to make sense up close.</p>
           </div>
@@ -127,7 +128,7 @@ export default function HomePage() {
 
       <section id="studio" className="studio section shell">
         <Reveal className="studio-grid">
-          <div><div className="section-kicker"><span>●</span><i/><span>STUDIO</span></div><h2>Serious about the work.<br/>Curious about everything.</h2></div>
+          <div><div className="section-kicker"><span>/</span><i/><span>STUDIO</span></div><h2>Serious about the work.<br/>Curious about everything.</h2></div>
           <div className="studio-copy"><p>Modum is a creative and digital studio built around product understanding, visual craft and technical capability.</p><p>Two cofounders, distributed responsibilities, one shared standard: make it clear, intentional and worth choosing.</p></div>
         </Reveal>
       </section>
@@ -136,7 +137,7 @@ export default function HomePage() {
         <BrandLogo className="brand-fragment" decorative />
         <div className="contact-blob" aria-hidden="true" />
         <Reveal className="contact-inner">
-          <div className="section-kicker"><span>●</span><i/><span>START</span></div>
+          <div className="section-kicker"><span>/</span><i/><span>START</span></div>
           <h2>Show us the product.</h2>
           <p>We'll start by understanding what people need to see, know or experience.</p>
           <button className="pill pill-signal prototype-cta" type="button" disabled>Start a conversation <span>↗</span></button>
