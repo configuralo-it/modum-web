@@ -1,4 +1,4 @@
-name: MOD-WEB-001 CI
+name: MOD-WEB-001 — Build & Deploy Pages
 
 on:
   push:
@@ -6,10 +6,21 @@ on:
       - feat/mod-web-001
   workflow_dispatch:
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: modum-pages
+  cancel-in-progress: true
+
 jobs:
-  verify:
+  build:
+    name: Verify & Build
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 12
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -18,7 +29,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: npm
+
+      - name: Setup GitHub Pages
+        id: pages
+        uses: actions/configure-pages@v5
+        with:
+          static_site_generator: next
 
       - name: Install dependencies
         run: npm install --no-audit --no-fund
@@ -26,5 +42,29 @@ jobs:
       - name: Typecheck
         run: npm run typecheck
 
-      - name: Build
+      - name: Build static export
         run: npm run build
+
+      - name: Verify export
+        run: |
+          test -f out/index.html
+          test -d out/_next
+          echo "Static export verified."
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ./out
+
+  deploy:
+    name: Deploy GitHub Pages
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v5
