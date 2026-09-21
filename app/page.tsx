@@ -64,13 +64,13 @@ export default function HomePage() {
         <div className="hero-meta mono">
           <span>SCROLL</span><i />
           <span>Product Truth / Commercial Clarity</span>
-          <span>Modum Studio / Creative & Digital</span>
+          <span>Product / Visual / Digital</span>
         </div>
       </section>
 
       <section id="work" className="work section shell">
         <Reveal>
-          <div className="section-kicker"><span>/</span><i/><span>STUDIO STUDIES</span><b>PORTFOLIO / NEXT</b></div>
+          <div className="section-kicker"><span>/</span><i/><span>STUDIO STUDIES</span><b>FORM / SYSTEM / INTERACTION</b></div>
           <h2 className="sr-only">Modum Studio studies</h2>
           <div className="project-grid">
             {projects.map(([n,title,meta], idx) => (
