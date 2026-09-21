@@ -168,6 +168,15 @@ export function HeroScene() {
         <directionalLight position={[-4, 5, 6]} intensity={2.7} color="#fff8ee" />
         <directionalLight position={[4.5, -1, 4]} intensity={1.15} color="#dfe7ff" />
         <pointLight position={[1.8, -0.5, 3]} intensity={2.35} color="#ff4d00" distance={5.8} />
+        <mesh position={[0.12, -1.42, 0.52]} rotation={[-Math.PI / 2, 0, -0.04]} scale={[1.5, 0.5, 1]}>
+          <circleGeometry args={[1, 64]} />
+          <meshBasicMaterial
+            color="#3c3f45"
+            transparent
+            opacity={0.055}
+            depthWrite={false}
+          />
+        </mesh>
         <ProductObject reduced={reduced} />
       </Canvas>
     </div>
