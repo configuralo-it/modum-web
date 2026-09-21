@@ -29,6 +29,15 @@ export const metadata: Metadata = {
 };
 
 
+const organizationJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: siteConfig.name,
+  url: siteConfig.url,
+  email: siteConfig.email,
+  description: siteConfig.description,
+};
+
 export const viewport: Viewport = {
   themeColor: siteConfig.themeColor,
   colorScheme: 'light',
@@ -37,7 +46,15 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationJsonLd).replace(/</g, '\\u003c'),
+          }}
+        />
+        {children}
+      </body>
     </html>
   );
 }
