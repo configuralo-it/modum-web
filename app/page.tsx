@@ -1,5 +1,6 @@
 import { BrandLogo } from '@/components/BrandLogo';
 import { ProductStudy } from '@/components/ProductStudy';
+import { InteractionLayer } from '@/components/InteractionLayer';
 import { siteConfig } from '@/lib/site';
 
 const services = [
@@ -37,6 +38,7 @@ const mobileMenuScript = String.raw`
 export default function HomePage() {
   return (
     <main className="v2">
+      <InteractionLayer />
       <header className="v2-header v2-shell">
         <a href="#top" className="v2-logo-link" aria-label="Modum Studio home">
           <BrandLogo className="v2-logo" />
@@ -94,13 +96,13 @@ export default function HomePage() {
       </section>
 
       <section id="work" className="v2-work v2-shell">
-        <div className="v2-section-head">
+        <div className="v2-section-head" data-reveal>
           <span className="v2-label">01 / SELECTED WORK</span>
           <p>Three Modum Studio Studies exploring how product value can become image, information and interaction.</p>
         </div>
 
         <div className="v2-work-grid">
-          <article className="v2-work-main">
+          <article className="v2-work-main" data-reveal>
             <div className="v2-study-image v2-study-product">
               <ProductStudy variant="detail" className="v2-study-product-art" />
             </div>
@@ -110,7 +112,7 @@ export default function HomePage() {
             </div>
           </article>
 
-          <article className="v2-work-side v2-work-editorial">
+          <article className="v2-work-side v2-work-editorial" data-reveal>
             <div className="v2-study-image" aria-hidden="true">
               <strong>FORM</strong><i>/</i><b>02</b>
               <span />
@@ -121,7 +123,7 @@ export default function HomePage() {
             </div>
           </article>
 
-          <article className="v2-work-side v2-work-digital">
+          <article className="v2-work-side v2-work-digital" data-reveal>
             <div className="v2-study-image" aria-hidden="true">
               <div className="v2-config-ring" />
               <ol><li>Oak</li><li>Steel</li><li>Fabric</li></ol>
@@ -136,13 +138,13 @@ export default function HomePage() {
 
       <section id="services" className="v2-capabilities">
         <div className="v2-shell">
-          <div className="v2-capabilities-intro">
+          <div className="v2-capabilities-intro" data-reveal>
             <span className="v2-label">02 / WHAT WE MAKE</span>
             <h2>Different disciplines.<br />One product reality.</h2>
             <p>We choose the medium after understanding what the product needs people to perceive.</p>
           </div>
 
-          <div className="v2-service-list">
+          <div className="v2-service-list" data-reveal>
             {services.map(([n, title, description]) => (
               <article key={n}>
                 <span>{n}</span>
@@ -162,12 +164,12 @@ export default function HomePage() {
           </div>
 
           <div className="v2-process-grid">
-            <div className="v2-process-copy">
+            <div className="v2-process-copy" data-reveal>
               <h2>A chair is never just a chair.</h2>
               <p>It is material, proportion, joints, finish, context, variants, photography, information and the way a customer eventually makes a choice.</p>
             </div>
 
-            <div className="v2-exploded">
+            <div className="v2-exploded" data-reveal>
               <ProductStudy variant="exploded" className="v2-exploded-art" />
             </div>
           </div>
@@ -180,7 +182,7 @@ export default function HomePage() {
 
       <section id="studio" className="v2-studio v2-shell">
         <span className="v2-label">04 / STUDIO</span>
-        <div className="v2-studio-grid">
+        <div className="v2-studio-grid" data-reveal>
           <h2>Serious about the work.<br />Curious about everything.</h2>
           <div>
             <p>Modum is a creative and digital studio built around product understanding, visual craft and technical capability.</p>
@@ -194,7 +196,7 @@ export default function HomePage() {
 
       <section id="contact" className="v2-contact">
         <div className="v2-contact-word" aria-hidden="true">/</div>
-        <div className="v2-shell v2-contact-inner">
+        <div className="v2-shell v2-contact-inner" data-reveal>
           <span className="v2-label">05 / START</span>
           <h2>Show us<br />the product.</h2>
           <div className="v2-contact-side">
