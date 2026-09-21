@@ -1,4 +1,4 @@
-name: MOD-WEB-001 — Build & Deploy Pages
+name: MOD-WEB-001 — Build, Deploy & Review
 
 on:
   push:
@@ -63,8 +63,65 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     needs: build
+    outputs:
+      page_url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v5
+
+  review:
+    name: Post-deploy Review
+    runs-on: ubuntu-latest
+    needs: deploy
+    timeout-minutes: 10
+
+    steps:
+      - name: Wait for edge propagation
+        run: sleep 8
+
+      - name: HTTP smoke test
+        env:
+          PAGE_URL: ${{ needs.deploy.outputs.page_url }}
+        run: |
+          echo "Reviewing: $PAGE_URL"
+          curl --fail --silent --show-error --location --retry 5 --retry-delay 2 "$PAGE_URL" -o /tmp/modum-preview.html
+          test -s /tmp/modum-preview.html
+          grep -q "Modum" /tmp/modum-preview.html
+          echo "HTTP smoke test passed."
+
+      - name: Lighthouse review
+        env:
+          PAGE_URL: ${{ needs.deploy.outputs.page_url }}
+        run: |
+          npx --yes lighthouse@12 "$PAGE_URL"             --quiet             --chrome-flags="--headless --no-sandbox --disable-dev-shm-usage"             --only-categories=performance,accessibility,best-practices,seo             --output=json             --output-path=/tmp/lighthouse.json
+
+          node - <<'NODE'
+          const fs = require('fs');
+          const report = JSON.parse(fs.readFileSync('/tmp/lighthouse.json', 'utf8'));
+          const categories = report.categories;
+          const scores = {
+            performance: Math.round(categories.performance.score * 100),
+            accessibility: Math.round(categories.accessibility.score * 100),
+            bestPractices: Math.round(categories['best-practices'].score * 100),
+            seo: Math.round(categories.seo.score * 100),
+          };
+          console.log('MODUM_REVIEW ' + JSON.stringify(scores));
+
+          const minimums = {
+            performance: 70,
+            accessibility: 90,
+            bestPractices: 90,
+            seo: 90,
+          };
+
+          const failures = Object.entries(minimums)
+            .filter(([key, min]) => scores[key] < min)
+            .map(([key, min]) => `${key}=${scores[key]} (<${min})`);
+
+          if (failures.length) {
+            console.error('Review thresholds not met: ' + failures.join(', '));
+            process.exit(1);
+          }
+          NODE
