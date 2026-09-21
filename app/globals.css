@@ -1419,3 +1419,62 @@ button:focus-visible{
 @media(prefers-reduced-motion:reduce){
   .hero-canvas{transition:none}
 }
+
+
+/* MOD-WEB-001 v1.3 — section precision after visual review */
+@media(min-width:1001px){
+  .logic{
+    display:grid;
+    grid-template-columns:
+      max-content minmax(28px,1fr)
+      max-content minmax(28px,1fr)
+      max-content minmax(28px,1fr)
+      max-content;
+    gap:14px;
+    width:100%;
+    min-width:0;
+    overflow:visible;
+  }
+  .logic i{
+    text-align:center;
+    min-width:0;
+  }
+  .logic span{
+    white-space:nowrap;
+  }
+}
+
+.contact .pill-signal{
+  min-width:224px;
+  border-radius:3px;
+  padding:16px 18px;
+  justify-content:space-between;
+  font-weight:500;
+  letter-spacing:-.01em;
+  box-shadow:0 9px 24px rgba(255,77,0,.12);
+  transition:
+    transform .18s ease,
+    box-shadow .18s ease,
+    background-color .18s ease;
+}
+.contact .pill-signal:hover{
+  transform:translateY(-2px);
+  box-shadow:0 13px 30px rgba(255,77,0,.18);
+}
+.contact .pill-signal span{
+  font-family:'Montserrat Variable',Arial,sans-serif;
+  font-size:12px;
+}
+@media(max-width:640px){
+  .contact .pill-signal{
+    width:min(100%,260px);
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .contact .pill-signal{
+    transition:none;
+  }
+  .contact .pill-signal:hover{
+    transform:none;
+  }
+}
