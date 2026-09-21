@@ -4,6 +4,25 @@ import { ComponentType, useEffect, useState } from 'react';
 
 type SceneModule = { HeroScene: ComponentType };
 
+function supportsWebGL() {
+  try {
+    const canvas = document.createElement('canvas');
+
+    const webgl2 =
+      typeof window.WebGL2RenderingContext !== 'undefined' &&
+      canvas.getContext('webgl2');
+
+    if (webgl2) return true;
+
+    return Boolean(
+      typeof window.WebGLRenderingContext !== 'undefined' &&
+        (canvas.getContext('webgl') || canvas.getContext('experimental-webgl')),
+    );
+  } catch {
+    return false;
+  }
+}
+
 export function HeroStage() {
   const [Scene, setScene] = useState<ComponentType | null>(null);
 
@@ -12,11 +31,15 @@ export function HeroStage() {
     let loading = false;
 
     const load = async () => {
-      if (loading || cancelled) return;
+      if (loading || cancelled || !supportsWebGL()) return;
       loading = true;
 
-      const mod = (await import('./HeroScene')) as SceneModule;
-      if (!cancelled) setScene(() => mod.HeroScene);
+      try {
+        const mod = (await import('./HeroScene')) as SceneModule;
+        if (!cancelled) setScene(() => mod.HeroScene);
+      } catch {
+        loading = false;
+      }
     };
 
     const onIntent = () => {
