@@ -1280,3 +1280,125 @@ button:focus-visible{
     font-size:10px;
   }
 }
+
+
+/* MOD-WEB-001 v1.5 — studies as product evidence, not abstract graphics */
+.project-1 .project-object{
+  background:
+    linear-gradient(115deg,rgba(255,255,255,.46),transparent 31%),
+    linear-gradient(145deg,#d8d1c6 0%,#b6aea2 52%,#e7e1d8 100%);
+}
+.project-1 .study-shape{
+  left:8%;
+  top:18%;
+  width:78%;
+  height:56%;
+  border-radius:18% 30% 15% 26% / 22% 28% 18% 32%;
+  background:
+    linear-gradient(158deg,rgba(255,255,255,.86),rgba(255,255,255,.06) 28%),
+    linear-gradient(145deg,#ece6dc 0%,#c6bdb0 52%,#9f978d 100%);
+  border:1px solid rgba(60,63,69,.15);
+  box-shadow:
+    18px 22px 0 -7px rgba(60,63,69,.13),
+    28px 34px 46px rgba(60,63,69,.12),
+    inset -28px -24px 48px rgba(60,63,69,.11),
+    inset 18px 14px 34px rgba(255,255,255,.5);
+  transform:rotate(-6deg);
+}
+.project-1 .study-shape:before{
+  content:"";
+  position:absolute;
+  left:8%;
+  right:8%;
+  bottom:9%;
+  height:10%;
+  border-radius:999px;
+  background:linear-gradient(90deg,rgba(60,63,69,.18),rgba(60,63,69,.04));
+  filter:blur(.3px);
+}
+.project-1 .study-shape:after{
+  content:"";
+  position:absolute;
+  width:42%;
+  height:32%;
+  right:9%;
+  top:14%;
+  border-radius:20% 35% 18% 30%;
+  border:1px solid rgba(60,63,69,.13);
+  background:rgba(255,247,244,.22);
+  box-shadow:inset 0 0 0 7px rgba(255,255,255,.08);
+}
+.project-1 .study-detail{
+  right:11%;
+  top:59%;
+  width:46%;
+  height:6px;
+  border-radius:999px;
+  background:linear-gradient(90deg,rgba(255,77,0,0),var(--signal) 22%,var(--signal) 78%,rgba(255,77,0,.08));
+  box-shadow:0 0 14px rgba(255,77,0,.18);
+  transform:rotate(-6deg);
+}
+.project-1 .project-object:after{
+  content:"EDGE / MATERIAL / THICKNESS";
+}
+
+/* Configurator study: a product silhouette with parameter logic */
+.project-3 .project-object{
+  background:
+    linear-gradient(rgba(255,247,244,.06) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,247,244,.06) 1px,transparent 1px),
+    linear-gradient(145deg,#333438,#141516 68%);
+  background-size:28px 28px,28px 28px,auto;
+}
+.project-3 .study-shape{
+  left:9%;
+  top:18%;
+  width:57%;
+  height:62%;
+  border:1px solid rgba(255,247,244,.26);
+  border-radius:28% 36% 24% 34% / 32% 26% 38% 30%;
+  transform:rotate(-5deg);
+  background:linear-gradient(145deg,rgba(255,247,244,.04),rgba(255,247,244,.015));
+}
+.project-3 .study-shape:before{
+  content:"";
+  position:absolute;
+  left:14%;
+  top:13%;
+  width:68%;
+  height:48%;
+  border:1px dashed rgba(255,247,244,.3);
+  border-radius:22% 30% 18% 28% / 28% 24% 34% 26%;
+  transform:rotate(3deg);
+}
+.project-3 .study-shape:after{
+  content:"";
+  position:absolute;
+  width:46%;
+  height:18%;
+  left:26%;
+  bottom:16%;
+  border-radius:28% 35% 26% 32%;
+  background:linear-gradient(145deg,#d9d2c8,#77736d);
+  border:1px solid rgba(255,255,255,.24);
+  box-shadow:
+    inset -9px -7px 20px rgba(0,0,0,.22),
+    0 14px 28px rgba(0,0,0,.16);
+}
+.project-3 .study-detail{
+  right:7%;
+  top:14%;
+  width:25%;
+  height:70%;
+  border-left:1px solid rgba(255,247,244,.2);
+  background:
+    radial-gradient(circle at 48% 8%,var(--signal) 0 4px,transparent 5px),
+    radial-gradient(circle at 28% 31%,#d9d2c8 0 6px,transparent 7px),
+    radial-gradient(circle at 70% 31%,#77736d 0 6px,transparent 7px),
+    radial-gradient(circle at 28% 50%,#fff7f4 0 6px,transparent 7px),
+    radial-gradient(circle at 70% 50%,#3c3f45 0 6px,transparent 7px),
+    repeating-linear-gradient(180deg,transparent 0 37px,rgba(255,247,244,.16) 37px 38px);
+}
+.project-3 .project-object:after{
+  content:"VARIANT / PARAMETER / VIEW";
+}
