@@ -1402,3 +1402,20 @@ button:focus-visible{
 .project-3 .project-object:after{
   content:"VARIANT / PARAMETER / VIEW";
 }
+
+
+/* MOD-WEB-001 v1.2 — hydration-free deferred WebGL */
+.hero-canvas{
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .32s ease;
+}
+.hero-visual-shell[data-webgl="true"] .hero-canvas{
+  opacity:1;
+}
+.hero-visual-shell[data-webgl="true"] .hero-object-fallback{
+  opacity:0;
+}
+@media(prefers-reduced-motion:reduce){
+  .hero-canvas{transition:none}
+}
