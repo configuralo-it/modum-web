@@ -115,7 +115,7 @@ export default function HomePage() {
       <div className="v3-band shell" role="group" aria-label="Material studies, photographed">
         {materials.map((m) => (
           <figure key={m.id} className="v3-band-cell">
-            <img src={m.src} alt={m.alt} width={1200} height={800} decoding="async" />
+            <img src={m.src} alt={m.alt} width={1200} height={800} decoding="async" className={`v3-mat-${m.id}`} />
             <figcaption className="mono">
               <span>{m.name}</span>
               <span>{m.detail}</span>
@@ -148,8 +148,8 @@ export default function HomePage() {
               <figcaption className="mono">Textile — grey weave</figcaption>
             </figure>
             <figure>
-              <img src={materials[2].src} alt={materials[2].alt} width={1100} height={1955} loading="lazy" decoding="async" />
-              <figcaption className="mono">Steel — brushed finish</figcaption>
+              <img src={materials[0].src} alt={materials[0].alt} width={1400} height={1050} loading="lazy" decoding="async" />
+              <figcaption className="mono">Oak — plank surface</figcaption>
             </figure>
           </div>
         </article>
@@ -189,7 +189,7 @@ export default function HomePage() {
                 name="material"
                 id={`cfg-${m.id}`}
                 className={`v3-cfg-input v3-cfg-input-${m.id}`}
-                defaultChecked={i === 2}
+                defaultChecked={i === 0}
               />
             ))}
 
@@ -197,7 +197,7 @@ export default function HomePage() {
               <div className="v3-cfg-options">
                 {materials.map((m) => (
                   <label key={m.id} htmlFor={`cfg-${m.id}`} className="v3-cfg-option">
-                    <img src={m.src} alt="" width={200} height={200} loading="lazy" decoding="async" />
+                    <img src={m.src} alt="" width={200} height={200} loading="lazy" decoding="async" className={`v3-mat-${m.id}`} />
                     <span className="mono">{m.name}</span>
                   </label>
                 ))}
@@ -206,7 +206,7 @@ export default function HomePage() {
               <div className="v3-cfg-stage">
                 {materials.map((m) => (
                   <figure key={m.id} className={`v3-cfg-view v3-cfg-view-${m.id}`}>
-                    <img src={m.src} alt={m.alt} width={1200} height={800} loading="lazy" decoding="async" />
+                    <img src={m.src} alt={m.alt} width={1200} height={800} loading="lazy" decoding="async" className={`v3-mat-${m.id}`} />
                     <figcaption className="mono">{m.name} — {m.detail}</figcaption>
                   </figure>
                 ))}
@@ -223,8 +223,11 @@ export default function HomePage() {
         </header>
 
         <div className="v3-services">
-          {services.map(([n, title, description]) => (
-            <article key={n} className="v3-service">
+          {services.map(([n, title, description], i) => (
+            <article
+              key={n}
+              className={`v3-service${i > 2 ? ' v3-service-secondary' : ''}${i === 3 ? ' v3-service-tier-break' : ''}`}
+            >
               <span className="mono">{n}</span>
               <h3>{title}</h3>
               <p>{description}</p>
@@ -261,12 +264,6 @@ export default function HomePage() {
             </figure>
           </div>
 
-          <ol className="v3-stages mono">
-            <li><span>01</span>Understand</li>
-            <li><span>02</span>Make visible</li>
-            <li><span>03</span>Build confidence</li>
-            <li><span>04</span>Make choice easier</li>
-          </ol>
         </div>
       </section>
 

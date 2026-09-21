@@ -131,13 +131,18 @@ a { color: inherit; }
 .v3-hero-object {
   display: flex;
   flex-direction: column;
+  /* the object owns the top and right edges of the first screen */
+  margin-top: calc(-1 * clamp(40px, 6vh, 72px));
+  margin-right: calc(-1 * var(--margin));
 }
 
 .v3-hero-object img {
   flex: 1;
   width: 100%;
-  min-height: 320px;
+  min-height: 480px;
   object-fit: cover;
+  object-position: 62% 42%;
+  filter: contrast(1.06) brightness(0.98);
   /* the slash crops the object — identity doing structural work */
   clip-path: polygon(16% 0, 100% 0, 100% 100%, 0 100%);
 }
@@ -146,6 +151,7 @@ a { color: inherit; }
   display: flex;
   justify-content: space-between;
   margin-top: 10px;
+  padding-right: var(--margin);
 }
 
 .v3-hero-object figcaption span + span { color: var(--ink-soft); }
@@ -185,6 +191,9 @@ a { color: inherit; }
 .v3-index em { font-style: normal; }
 
 .v3-index a:hover em { color: var(--signal); }
+
+/* steel reads coldest at swatch scale — a restrained metallic cast */
+.v3-mat-steel { filter: saturate(0.55) contrast(1.15); }
 
 /* ---------- material band ---------- */
 
@@ -453,10 +462,22 @@ a { color: inherit; }
 .v3-service h3 {
   font-stretch: 125%;
   font-weight: 720;
-  font-size: clamp(21px, 2.4vw, 32px);
+  font-size: clamp(24px, 2.8vw, 38px);
   line-height: 1.1;
   letter-spacing: -0.01em;
 }
+
+/* system services sit one visible tier below the perception services */
+.v3-service-secondary { padding-block: 16px; }
+
+.v3-service-secondary h3 {
+  font-size: clamp(17px, 1.9vw, 24px);
+  font-weight: 680;
+}
+
+.v3-service-secondary p { font-size: 14px; }
+
+.v3-service-tier-break { margin-top: 34px; }
 
 .v3-service p {
   font-size: 15px;
@@ -514,25 +535,6 @@ a { color: inherit; }
   line-height: 1.55;
   color: var(--paper-on-ink-soft);
   max-width: 52ch;
-}
-
-.v3-stages {
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: clamp(20px, 2.4vw, 36px);
-  margin-top: clamp(52px, 8vh, 88px);
-}
-
-.v3-stages li {
-  border-top: 1px solid var(--line-on-ink);
-  padding-top: 14px;
-}
-
-.v3-stages li span {
-  display: block;
-  color: var(--signal);
-  margin-bottom: 10px;
 }
 
 /* ---------- studio ---------- */
@@ -747,7 +749,11 @@ a { color: inherit; }
 
   .v3-hero-grid { grid-template-columns: 1fr; }
 
-  .v3-hero-object img { min-height: 0; height: clamp(240px, 40vh, 380px); }
+  .v3-hero-object { margin-top: 0; margin-right: 0; }
+
+  .v3-hero-object figcaption { padding-right: 0; }
+
+  .v3-hero-object img { min-height: 0; height: clamp(260px, 42vh, 400px); }
 
   .v3-hero-foot { grid-template-columns: 1fr; align-items: start; }
 
