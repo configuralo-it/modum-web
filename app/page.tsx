@@ -78,8 +78,7 @@ export default function HomePage() {
 
           <div className="v2-product-plate v25-product-stage" aria-label="Modum Product Study 01">
             <ProductStudy variant="hero" className="v2-product-art v25-product-art" />
-            <span className="v25-object-note v25-object-note-a">STUDY / 01</span>
-            <span className="v25-object-note v25-object-note-b">FORM / MATERIAL / CONSTRUCTION</span>
+            <span className="v25-object-note v25-object-note-a">MODUM PRODUCT STUDY / 01</span>
           </div>
 
           <div className="v25-hero-statement">
