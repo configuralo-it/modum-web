@@ -14,7 +14,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: modum-pages
+  group: modum-pages-${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
