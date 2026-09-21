@@ -12,9 +12,9 @@ const services = [
 ];
 
 const projects = [
-  ['01','Visual placeholder','Product / 3D · real asset pending'],
-  ['02','Visual placeholder','Editorial / Catalog · real asset pending'],
-  ['03','Visual placeholder','Web / Configurator · real asset pending'],
+  ['01','Material study','Product form / 3D · prototype study'],
+  ['02','Editorial study','Catalog system · prototype study'],
+  ['03','Configurator study','Digital sales tool · prototype study'],
 ];
 
 export default function HomePage() {
@@ -63,7 +63,13 @@ export default function HomePage() {
           <div className="project-grid">
             {projects.map(([n,title,meta], idx) => (
               <article className={`project project-${idx+1}`} key={n}>
-                <div className="project-visual" aria-hidden="true"><span className="mono">/{n}</span><div className="project-object" /></div>
+                <div className="project-visual" aria-hidden="true">
+                  <span className="mono">/{n}</span>
+                  <div className="project-object">
+                    <i className="study-shape" />
+                    <i className="study-detail" />
+                  </div>
+                </div>
                 <div className="project-info"><div><h3>{title}</h3><p>{meta}</p></div><span className="project-marker mono" aria-hidden="true">PENDING</span></div>
               </article>
             ))}
