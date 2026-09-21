@@ -624,3 +624,37 @@ h1,h2,h3,
   font-weight:600;
   letter-spacing:0;
 }
+
+
+/* MOD-WEB-001 v0.8 — verified contact + identity crop */
+.studio{
+  position:relative;
+  overflow:hidden;
+  isolation:isolate;
+}
+.studio-brand-fragment{
+  position:absolute;
+  z-index:0;
+  width:min(880px,72vw);
+  height:auto;
+  right:-32vw;
+  top:-12%;
+  opacity:.035;
+  transform:rotate(90deg);
+  pointer-events:none;
+}
+.studio-grid{
+  position:relative;
+  z-index:1;
+}
+.contact-inner small{
+  letter-spacing:.11em;
+}
+@media(max-width:640px){
+  .studio-brand-fragment{
+    width:150vw;
+    right:-88vw;
+    top:4%;
+    opacity:.028;
+  }
+}
