@@ -146,7 +146,7 @@ export default function HomePage() {
         </Reveal>
       </section>
 
-      <footer className="shell footer"><BrandLogo className="brand-logo brand-logo-footer" decorative /><span className="mono">Creative studio for real products</span><span className="mono">© 2026</span></footer>
+      <footer className="shell footer"><BrandLogo className="brand-logo brand-logo-footer" decorative /><a className="mono footer-domain" href="https://modumstudio.it">MODUMSTUDIO.IT</a><span className="mono">© 2026</span></footer>
     </main>
   );
 }
