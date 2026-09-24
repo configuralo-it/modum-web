@@ -787,8 +787,6 @@ a { color: inherit; }
 
   .v3-service p { grid-column: 2; }
 
-  .v3-stages { grid-template-columns: 1fr 1fr; }
-
   .v3-studio { grid-template-columns: 1fr; }
 }
 

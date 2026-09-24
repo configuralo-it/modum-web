@@ -119,8 +119,8 @@ Current scripts from `package.json`:
 - `npm run start` → `next start`
 - `npm run lint` → `next lint`
 - `npm run typecheck` → `tsc --noEmit`
-- `npm run predev` → `node scripts/prepare-static.mjs`
-- `npm run prebuild` → `node scripts/prepare-static.mjs`
+
+The repository carries no three.js runtime: `public/vendor/three.module.js` and `public/hero-scene.js` are absent, `scripts/prepare-static.mjs` and its `predev`/`prebuild` hooks are absent, and the v2.6.1 components that consumed them are not wired into the V3 homepage.
 
 Do not trade away accessibility or basic performance for decoration.
 
