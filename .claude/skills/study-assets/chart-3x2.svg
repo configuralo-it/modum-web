@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3200" height="2133" viewBox="0 0 3200 2133">
+  <!-- Test chart for the frame-image test. Not page content. -->
+  <defs>
+    <pattern id="grid" width="133" height="133" patternUnits="userSpaceOnUse">
+      <path d="M 133 0 L 0 0 0 133" fill="none" stroke="#96989C" stroke-width="2"/>
+    </pattern>
+  </defs>
+  <rect width="3200" height="2133" fill="#FFF7F4"/>
+  <rect width="3200" height="2133" fill="url(#grid)"/>
+  <g fill="none" stroke="#3C3F45">
+    <rect x="6" y="6" width="3188" height="2121" stroke-width="12"/>
+    <rect x="384" y="256" width="2432" height="1621" stroke-width="8"/>
+    <path d="M 1600 0 V 2133 M 0 1066 H 3200" stroke-width="6"/>
+    <path d="M 0 0 L 3200 2133 M 0 2133 L 3200 0" stroke-width="4"/>
+    <circle cx="1600" cy="1066" r="133" stroke-width="8"/>
+  </g>
+  <g fill="#3C3F45" font-family="Helvetica, Arial, sans-serif" font-size="114">
+    <text x="66" y="180">TL</text>
+    <text x="3134" y="180" text-anchor="end">TR</text>
+    <text x="66" y="2067">BL</text>
+    <text x="3134" y="2067" text-anchor="end">BR</text>
+    <text x="1600" y="436" text-anchor="middle">TEST CHART 3:2 3200x2133</text>
+    <text x="1600" y="1811" text-anchor="middle">inner box: 12% margin</text>
+  </g>
+</svg>
