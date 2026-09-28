@@ -1,8 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import { siteConfig } from '@/lib/site';
-import '@fontsource-variable/archivo/wdth.css';
-import '@fontsource/ibm-plex-mono/400.css';
-import '@fontsource/ibm-plex-mono/500.css';
+import '@fontsource-variable/montserrat/wght.css';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -22,7 +20,7 @@ export const metadata: Metadata = {
     url: siteConfig.url,
     title: siteConfig.title,
     description: siteConfig.description,
-    locale: 'en_US',
+    locale: siteConfig.locale,
   },
   twitter: {
     card: 'summary',
@@ -52,7 +50,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang={siteConfig.language}>
       <body>
         <script
           type="application/ld+json"

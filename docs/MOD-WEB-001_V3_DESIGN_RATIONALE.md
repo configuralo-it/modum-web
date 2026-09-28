@@ -1,6 +1,7 @@
 # MOD-WEB-001 — V3 Design Rationale
 
-Status: internal review candidate
+Status: record of Art Direction V3. The working tree holds a later candidate, documented
+in `MOD-WEB-001_SHOWROOM_DIRECTION.md`.
 Date: 2026-09-22
 
 ## Governing idea — everything on the page is true

@@ -1,17 +1,11 @@
-export type ProjectService =
-  | '3D Rendering'
-  | 'Catalogs & Brochures'
-  | 'Photo & Video'
-  | 'Product Configurators'
-  | 'Web & E-commerce'
-  | 'AI Strategy & Automation';
+import type { ServiceId } from '@/lib/services';
 
 export type ProjectRecord = {
   slug: string;
   title: string;
   client: string;
   year?: string;
-  services: ProjectService[];
+  services: ServiceId[];
   intro: string;
   challenge?: string;
   approach?: string;

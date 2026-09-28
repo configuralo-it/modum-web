@@ -1,6 +1,7 @@
 # MOD-WEB-001 — V3 Asset & Typography Record
 
-Status: Phase B deliverable
+Status: record of Art Direction V3. The files listed here are no longer in the working
+tree; the current record is `MOD-WEB-001_SHOWROOM_ASSETS.md`.
 Date: 2026-09-22
 
 ## Typography bridge (transitional — DEC-006 proprietary typeface remains planned)

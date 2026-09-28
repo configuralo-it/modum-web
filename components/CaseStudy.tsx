@@ -1,58 +1,75 @@
 import Link from 'next/link';
 import type { ProjectRecord } from '@/lib/projects';
 import { BrandLogo } from '@/components/BrandLogo';
-import { siteConfig } from '@/lib/site';
+import { SiteFooter } from '@/components/SiteFooter';
+import { getService } from '@/lib/services';
+
+type Chapter = { title: string; body?: string };
 
 export function CaseStudy({ project }: { project: ProjectRecord }) {
+  const chapters: Chapter[] = [
+    { title: 'Richiesta', body: project.challenge },
+    { title: 'Metodo', body: project.approach },
+    { title: 'Risultato', body: project.outcome },
+  ];
+  const services = project.services.map((id) => getService(id).name);
+
   return (
-    <main className="case-study">
-      <header className="case-study-header shell">
-        <Link className="brand-link" href="/" aria-label="Modum Studio home">
-          <BrandLogo className="brand-logo brand-logo-header" />
+    <>
+      <header className="site-header shell">
+        <Link className="site-logo" href="/" aria-label="Modum Studio, pagina iniziale">
+          <BrandLogo />
         </Link>
-        <Link className="text-link" href="/#work">Back to work <span>↗</span></Link>
       </header>
 
-      <section className="case-study-hero shell">
-        <div className="section-kicker"><span>/</span><i/><span>CASE STUDY</span></div>
-        <h1>{project.title}</h1>
-        <div className="case-study-meta">
-          <span>{project.client}</span>
-          {project.year ? <span>{project.year}</span> : null}
-          <span>{project.services.join(' / ')}</span>
-        </div>
-        <p>{project.intro}</p>
-      </section>
-
-      {project.hero ? (
-        <figure className="case-study-media shell">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={project.hero} alt="" />
-        </figure>
-      ) : null}
-
-      <section className="case-study-story shell">
-        {project.challenge ? <article><span className="mono">01 / Challenge</span><p>{project.challenge}</p></article> : null}
-        {project.approach ? <article><span className="mono">02 / Approach</span><p>{project.approach}</p></article> : null}
-        {project.outcome ? <article><span className="mono">03 / Outcome</span><p>{project.outcome}</p></article> : null}
-      </section>
-
-      {project.gallery?.length ? (
-        <section className="case-study-gallery shell">
-          {project.gallery.map((src, index) => (
-            <figure key={src}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={src} alt="" />
-              <figcaption className="mono">/{String(index + 1).padStart(2, '0')}</figcaption>
-            </figure>
-          ))}
+      <main>
+        <section className="section shell">
+          <header className="section-head grid">
+            <h1 className="heading">{project.title}</h1>
+            <p>{project.intro}</p>
+          </header>
+          <p className="caption">
+            {[project.client, project.year, ...services].filter(Boolean).join(' / ')}
+          </p>
         </section>
-      ) : null}
 
-      <footer className="case-study-footer shell">
-        <BrandLogo className="brand-logo brand-logo-footer" decorative />
-        <a href={`mailto:${siteConfig.email}`}>Start a conversation <span>↗</span></a>
-      </footer>
-    </main>
+        {project.hero ? (
+          <figure className="shell">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={project.hero} alt="" />
+          </figure>
+        ) : null}
+
+        <section className="section shell">
+          <div className="steps grid">
+            {chapters.map((chapter) =>
+              chapter.body ? (
+                <article key={chapter.title} className="step">
+                  <h2>{chapter.title}</h2>
+                  <p>{chapter.body}</p>
+                </article>
+              ) : null,
+            )}
+          </div>
+        </section>
+
+        {project.gallery?.length ? (
+          <section className="section shell">
+            {project.gallery.map((src) => (
+              <figure key={src}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={src} alt="" />
+              </figure>
+            ))}
+          </section>
+        ) : null}
+
+        <p className="shell">
+          <Link className="action" href="/#work">Torna al progetto</Link>
+        </p>
+      </main>
+
+      <SiteFooter />
+    </>
   );
 }
